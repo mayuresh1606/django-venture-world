@@ -100,6 +100,11 @@ figure img {
   width: 65vw;
   margin: 2.5vh 2.5vw;
 }
+/* image in package */
+.dummy-img {
+  width: 60vw;
+  height: 80vh;
+}
 .map-venture {
   width: 40vw;
   height: 40vh;
@@ -149,6 +154,10 @@ footer .copyright {
   .venture-info .tour-info .btn {
     position: relative;
     top: 5%;
+  }
+  .dummy-img {
+    width: 80vw;
+    height: 80vh;
   }
   /* contact Us */
   .address {
@@ -213,6 +222,10 @@ footer .copyright {
   .venture-info .tour-img {
     width: 320px;
     height: 220px;
+  }
+  .dummy-img {
+    width: 80vw;
+    height: 80vh;
   }
   .venture-info .tour-info {
     width: 320px;
