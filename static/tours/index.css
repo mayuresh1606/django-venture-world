@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap');
+body {
+  overflow-x: hidden;
+  font-family: 'Dosis', sans-serif;
+}
+header {
+  width: 100vw;
+}
+.navbar {
+  min-height: 12vh;
+  width: 100vw;
+}
+.container {
+  width: 80vw;
+  margin: 0px 10vw;
+  height: auto;
+  /* background-color: black; */
+  /* text-align: center; */
+  background-color: rgb(236, 235, 235);
+  padding: 07vh 5vw;
+}
+.match-width,
+.card {
+  max-width: 300px;
+}
+figure,
+.tour-info {
+  margin: 30px;
+}
+figure img {
+  width: 550px;
+  height: 420px;
+  image-resolution: 400px;
+}
+.venture-info {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 80px 40px;
+}
+.venture-info .tour-img {
+  margin-right: 30px;
+}
+.venture-info .tour-info {
+  width: 380px;
+  margin-left: 30px;
+}
+.venture-info .tour-img img {
+  width: 550px;
+  height: 420px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 10px 10px 17px 4px grey;
+}
+.venture-info .tour-info .match-width {
+  margin: 4px 3px;
+  font-weight: 300;
+  font-size: large;
+  color: rgb(99, 102, 102);
+}
+.venture-info .tour-info .btn {
+  position: relative;
+  top: 25%;
+}
+.venture-info .tour-info a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: black;
+}
+.hidden {
+  visibility: hidden;
+}
+.reverse {
+  direction: rtl;
+  text-align: left;
+}
+.email-id {
+  color: rgb(72, 72, 247);
+}
+.address {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+/* Contact */
+.email-field {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-items: center;
+}
+.message {
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+  width: 65vw;
+}
+#field {
+  width: 30vw;
+  height: 10vh;
+}
+#field-2 {
+  width: 65vw;
+  margin: 2.5vh 2.5vw;
+}
+.map-venture {
+  width: 40vw;
+  height: 40vh;
+}
+#submit-button {
+  background-color: burlywood;
+  color: black;
+}
+footer {
+  background-color: rgb(44, 44, 44);
+  height: 15vh;
+  color: white;
+}
+footer .copyright {
+  margin: 0 10vw;
+  position: relative;
+  vertical-align: middle;
+  top: 42%;
+}
+@media only screen and (min-width: 280px) and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: auto;
+    margin: 0px 2.5vw;
+    /* padding: 07vh 05vw; */
+  }
+  .table {
+    font-size: smaller;
+  }
+  .venture-info {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 40px 0px;
+    direction: ltr;
+  }
+  .venture-info .tour-img img {
+    width: 320px;
+    height: 220px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 10px 10px 17px 4px grey;
+  }
+  .venture-info .tour-info {
+    width: 320px;
+    margin-left: 10px;
+  }
+  .venture-info .tour-info .btn {
+    position: relative;
+    top: 5%;
+  }
+  /* contact Us */
+  .address {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+  }
+  .email-field {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+  }
+  #field {
+    width: 40vw;
+    height: 10vh;
+  }
+  .map-venture {
+    width: 80vw;
+    height: 60vh;
+  }
+  .message {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    width: 100%;
+  }
+  #field-2 {
+    width: 82.5vw;
+    height: 20vh;
+    margin: 5vh 0;
+  }
+  .submit-btn #submit-button {
+    width: 30vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1048px) {
+  .container {
+    width: 100%;
+    height: auto;
+    margin: 0px 2.5vw;
+    padding: 07vh 05vw;
+  }
+  .navbar {
+    font-size: x-large;
+  }
+  .venture-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 40px 0px;
+    direction: ltr;
+  }
+  .venture-info .tour-img {
+    padding: 5vh 2vw;
+  }
+  .venture-info .tour-img img {
+    width: 320px;
+    height: 220px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 10px 10px 17px 4px grey;
+  }
+  .venture-info .tour-img {
+    width: 320px;
+    height: 220px;
+  }
+  .venture-info .tour-info {
+    width: 320px;
+    margin-left: 10px;
+  }
+  .venture-info .tour-info .btn {
+    position: relative;
+    top: 5%;
+  }
+  /* contact Us */
+  .address {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+  }
+  .address-info {
+    /* height: 40vh; */
+    padding: 10vh 0;
+  }
+  .address-location {
+    height: auto;
+  }
+  .email-field {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+    width: 80vw;
+  }
+  #field {
+    width: 40vw;
+    height: 7vh;
+    margin: 0 1vw;
+  }
+  .map-venture {
+    width: 40vw;
+    height: 40vh;
+  }
+  .message {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    width: 81vw;
+    margin: 0;
+  }
+  #field-2 {
+    width: 100%;
+    height: 15vh;
+  }
+  .submit-btn #submit-button {
+    width: 30vw;
+  }
+}

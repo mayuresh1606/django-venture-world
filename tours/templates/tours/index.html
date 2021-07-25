@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venture World</title>
+  </head>
+  <body>
+    {% block content %}
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Venture World</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'services' %}">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <h2 class="heading-venture">Welcome to Venture World</h2>
+      <hr>
+      <p>Welcome to the Venture World to enjoy great getaways. Whilst assuring you the lifetime holiday experience & take you
+        to
+        places dreams are made of. We aim to provide you a complete holiday package.
+      
+        Discover nature’s hidden treasure with venture world in the high picturesque and majestic mountains, the snow covered
+        glaciers, the golden deserts and the awe inspiring sand dunes, get a closer look at the flora and fauna in their
+        natural
+        environment and enjoy natures bounty. Relax and enjoy the water sports at the sun kissed beaches. Widen your horizons
+        by
+        visiting historical monuments and places and rediscover the varied rich culture, tradition, eternal costumes and
+        vibrant
+        colors spread all over the world.</p>
+      <div class="himachal-packages">
+        <h1>Himachal Packages</h1>
+        <p>VENTURE WORLD 25 YEARS OF TOURING EXPERINCE
+        
+          SPECIALITY IN GROUP PACKAGES AND ADVENTURE TOUR
+        
+          PRESENTS</p>
+          <p> - Exclusively the magnificent Himachal Pradesh</p>
+        <hr>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Destination</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Rate Per Person</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for pack in package %}
+            <tr>
+              <td>{{ pack.destination_1 }} ({{ pack.destination_1_nights }}N) <br>
+                {% if pack.destination_2 != 'False' %}
+                {{ pack.destination_2 }} ({{ pack.destination_2_nights }}N)<br>
+                {% endif %}
+                {% if pack.destination_3 != 'False' %}
+                {{ pack.destination_3 }} ({{ pack.destination_3_nights }})
+                {% endif %}
+              </td>
+              <td>{{ pack.days }} - Days <br>
+                {{ pack.nights }} - Nights
+              </td>
+              <td>Starts From - ₹{{ pack.starts_from }}</td>
+              <td><a href="{% url 'package_detail' pack.package_type %}">Click for more details</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% for type in pack_types %}
+      <div class="venture-info">
+        <div class="tour-img">
+          <img class="tour-img-bordered" src="{{ type.image.url }}" alt="err">
+        </div>
+        <div class="tour-info">
+          <h3>{{ type.package_type }}</h3>
+          <hr>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus officia exercitationem quisquam natus ipsum autem, et maxime nam est nesciunt necessitatibus aut quam id omnis molestiae suscipit vel illum labore.</p>
+          {% for package in all_packages %}
+          {% if package.package_type == type %}
+          <span class="match-width package-name" id="package-id">{{ package.package_name }}</span>
+          {% endif %}
+          {% endfor %}
+          <br>
+          <button class="btn btn-info"><a href="{% url 'tour_details' type.package_type %}">Click to know more</a></button>
+        </div>
+      </div>
+      {% endfor pack_types %} 
+    </div>
+    <footer>
+      <div class="copyright">
+        Copyright 2012 | Venture World Tours & Travels.
+      </div>
+    </footer>
+    {% endblock %}
+  </body>
+  <script></script>
+</html>

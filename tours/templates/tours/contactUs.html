@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Venture World</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="contact-Us">
+            <h3>Contact Us</h3>
+        </div>
+        <hr>
+        {% if request.method == "POST" %}
+        <center>
+            <h2>Hey! {{ senders_name }}</h2>
+            <p>We received your mail, will respond shortly...</p>
+        <center>
+        {% else %}    
+        <div class="address">
+            <div class="address-info">
+                <h4>Venture World,
+                Swagath Travels</h4>
+                <p>Hotel Swagath, Castle Mill Naka, <br>
+                    Meenatai Thakre Chowk, <br>
+                    Thane 400 601</p>
+                    
+                <span>Tel:022-25474298</span>
+                <p>Mobile: 9869850055, <br> 9969829065 <br>9869840335</p>
+                <p>Email Id : <span class="email-id">yashodhar_raj@yahoo.com</span><br> yash@ventureworld.org <br> rajendra@ventureworld.org <br> info@ventureworld.org</p>
+            </div>
+            <div class="address-location">
+                <center>
+                <iframe class="map-venture"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.7767842473795!2d72.97602834621483!3d19.204949392817387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9396dd09805%3A0xe7e9ce84f716aebd!2sVenture%20World%2C%20Swagath%20Travels!5e0!3m2!1sen!2sin!4v1627115862443!5m2!1sen!2sin"
+                    width="40vw" height="40vh" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+                </center>
+            </div>
+        </div>
+        <h4>Any queries? Write us below</h4>
+        <hr>
+        <form action="{% url 'contact-us' %}" method="POST">
+            <div class="email-field">
+                {% csrf_token %}
+                <div class="senders-name">
+                    <input type="text" name="senders-name" id="field" placeholder="Enter your name">
+                </div>
+                <div class="senders-email">
+                    <input type="email" name="senders-email" id="field" placeholder="Enter your E-mail">
+                </div>
+            </div>
+            <div class="message">
+                <textarea name="message" id="field-2" cols="50" rows="10" placeholder="Write your query"></textarea>
+                <div class="btn submit-btn">
+                    <input type="submit" id="submit-button" value="Send Email">
+                </div>
+            </div>
+        </form>
+        {% endif %}
+        </div>
+        {% endblock %}
+</body>
+</html>

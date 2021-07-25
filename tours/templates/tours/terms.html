@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Venture World</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="terms-condition">
+            <h3>Terms & Conditions</h3>
+        </div>
+        <hr>
+        <div class="all-terms">
+            <ul>
+                <li>Tour cost does not include Air or Rail fare (but we will assist in booking rail / air ticket) Meals, during rail / air
+                journey & where ever not specified.</li>
+                <li>On request by the tour participant, to travel by higher class of Rail/Air, we assures to arrange for the same. But if we
+                cannot fulfill the request, the tour participant will have to travel, as per the ticket arranged, according to initial
+                request. Non-availability of higher class cannot be a reason to cancel the tour.</li>
+                <li>Venture World has the right 
+                    <ul>
+                        <li>To change / modify the route of the tour or cancel the tour if it is deemed advisable or necessary due to natural
+                        calamities or
+                        unavoidable circumstances.</li>
+                        <li>To alter, amend, postpone, or cancel any of the tours advertised without assigning any reason in either case money paid
+                        by the tour participant will be fully refunded but no compensation claim will be entertained.</li>
+                        <li>To ask the participant to leave the tour immediately If he/she misbehaves causing inconvenience or annoyance to any tour
+                        participant or causes damage to the property. There will not be any compensation, whatsoever, in such cases.</li>
+                    </ul>
+                </li>
+                <li>Venture World
+                    <ul>
+                        <li>Shall in no circumstances whatsoever be liable for any damage/ loss caused to the tour participant due to reasons beyond
+                        the control of the organizers.</li>
+                        <li>Shall not be liable for the loss / damage of the baggage and personal belongings of the tour participant it is his/her
+                        responsibility.</li>
+                        <li>Strictly prohibits smoking and drinking alcohol during the rail/ bus journey / in the dining halls.</li>
+                        <li>Is co-ordinating and conducting camps, tours, yatra and picnics under its brand name. We are tour organizers only. We do
+                        not control or operate any airline, railway, coach company or shipping, transport, hotel, restaurant or any other
+                        facility/ services advertised. We are not responsible for any delay, deficiency or improper services provided by the
+                        outside agencies.</li>
+                        <li>Does not have any control on schedules of opening and closing timings of the tourist attractions.</li>
+                        <li>Shall not be responsible for the tour participant, before joining the group, it will be sole responsibility of the tour
+                        participant to join the group at the right time and place.</li>
+                    </ul>
+                </li>
+                <li>If there are less than 30 participants in a group, then the road travel will be done by Sumo / Qualis / Tempo traveler
+                etc.</li>
+                <li>There will be separate rules and regulations for different packages. These will be supplement to the main terms and
+                conditions and will be informed to participant at the time of booking.</li>
+                <li>We may arrange shooting during tours, the tour participants shall have no objection to the shot material being used as
+                publicity material (stills / video).</li>
+                <li>Package tour maximum liability of the Venture World is to the package cost only.</li>
+                <li>Tour participants are requested to collect their rail/ air tickets, tour itinerary and list of necessary things to be
+                carried from the Venture World office, only after making the full payment. Tickets and itinerary will not be sent by
+                courier.</li>
+                <li>Any disputes arising in respect of the tour shall be subject to Thane Jurisdiction.</li>
+            </ul>
+        </div>
+        <div class="cancellation">
+            <h4>Cancellation Amount refunded on tour cost</h4>
+            <ul>
+                <li>From 119 to 90days prior to the departure of the tour 85%</li>
+                <li>From 89 to 60 days prior to the departure of the tour 70%</li>
+                <li>From 59 to 30 days, prior to the departure of the tour 50%</li>
+                <li>From 29 to 8 days, prior to the departure of the tour 30%</li>
+                <li>No amount will be refunded if cancelled prior to 7 days of departure of the tour or no show NIL</li>
+            </ul>
+        </div>
+        <div class="note">
+            <h4>Note</h4>
+            <ul>
+                <li>Train Travel by A/C coach/air will be arranged with additional cost for Standerd & Deluxe Package.</li>
+                <li>Air Travel will be arranged with additional cost for Premium Package.</li>
+                <li>Doctor throughout the tour will be complimentary subject to availability & minimum student strength of 60</li>
+                <li>Detailed Tour ltinerary & Name of the Hotels will be provided after selecting the tour.</li>
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

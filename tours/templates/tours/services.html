@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+</head>
+<body>
+    {% block content %}
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'index' %}">Venture World</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}"">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="heading"><h2>
+            Services we Offer</h2>
+        </div>
+        <hr>
+        <div class="serving-packages">
+            <p>Individual, couple, family, group, educational institutes, corporate, industries, inbound & outbound tourist.</p>
+        </div>
+        <div class="bookings">
+            <h3>Bookings</h3>
+            <p>Accommodation – hotels & resorts (budget, standard, deluxe, luxury & star category)</p>
+            <p>We specialize in Hotel / resort bookings for individual, couple, family, group, educational institutes, corporates,
+            industries, inbound & outbound tourist. Hotel category can be budget, standard, deluxe, luxury & star according to
+            traveler’s choice. All hotels provide comfort & valued service.</p>
+            <p class="contact-enquire">Contact us for Hotel booking / Enquiry.</p>
+        </div>
+        <div class="transportation">
+            <h3>Transportation – Air (Domestic & International) Rail (e-ticketing)</h3>
+            <p>Car rental a/c & non a/c (Indica, Indigo, Qualis, Sumo, Tavera, Innova etc.)
+            Bus hire a/c & non a/c (tempo traveller, mini bus, semi – luxury, luxury, volvo etc. Daily out station route bus) Cruise
+            (River, Backwater, House boat, Package cruise domestic & international)</p>
+        </div>
+        <div class="package-tour">
+            <h3>PACKAGE TOUR</h3>
+            <ul>
+                <li>Domestic & international (Sight seeing / Fun tour, Excursion / Study tour, Corporate / Industrial tour, Special
+                Honeymoon Tour)</li>
+                <li>Short Escape.</li>
+                <li>Daily Package.</li>
+                <li>Bharat Bharaman Program Tour</li>
+                <li>Yatra / Pilgrimage tour.</li>
+                <li>Adventure Camps.</li>
+                <li>Jungle Saffari.</li>
+                <li>Picnic, conferences & workshops.</li>
+            </ul>
+        </div>
+        <div class="world-tours">
+            <h4>AMAZING WORLD TOUR</h4>
+            <p>FRANCE, ENGLAND, HOLLAND, BELGIUM, GERMANY, ITALY, GREECE, ROME, SWITZERALND, AUSTRIA, SPAIN, SCOTLAND, PORTUGAL, EGYPT,
+            DUBAI, U.S.A., CANADA, AUSTRAILIA, NEWZEALAND, CARRABEAN'S SOUTH AFRICA, KENYA, SINGAPORE, THAILAND, MALASIYA, HONG
+            KONG, CHINA, JAPAN, TIBET, NEPAL, BHUTAN, SRILANKA etc.</p>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>
