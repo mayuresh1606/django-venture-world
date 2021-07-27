@@ -4,8 +4,8 @@
         for(let i=0;i < tourInfo.length;i++){
             tour = tourInfo[i]
             pack = tour.querySelectorAll('.package-name')
-            if(pack.length > 2){
-                for(let j=pack.length; j > 2; j--){
+            if(pack.length > 10){
+                for(let j=pack.length; j > 10; j--){
                     pack[j-1].classList.add('hidden')
                 }
             }
@@ -21,8 +21,8 @@
         const tableBody = document.querySelectorAll('.table-body')
         tableBody.forEach(function(table){
             let tableRow = table.querySelectorAll('#table-row');
-            if(tableRow.length >= 4){
-                for (let k=tableRow.length - 1; k > 2;k--){
+            if(tableRow.length >= 11){
+                for (let k=tableRow.length - 1; k > 9;k--){
                     const specificRow = tableRow[k]
                     table.removeChild(specificRow)
                 }

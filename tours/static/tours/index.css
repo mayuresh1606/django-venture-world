@@ -118,17 +118,33 @@ footer {
   height: 15vh;
   color: white;
 }
-footer .copyright {
-  margin: 0 10vw;
+.footer-details {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: row;
+  justify-content: space-between;
   position: relative;
   vertical-align: middle;
-  top: 42%;
+  height: 15vh;
 }
-@media only screen and (min-width: 280px) and (max-width: 600px) {
+.copyright {
+  margin: 0 10vw;
+  top: 40%;
+  position: relative;
+  height: fit-content;
+}
+.dev-details {
+  height: fit-content;
+  top: 30%;
+  position: relative;
+  margin: 0 10vw;
+  color: grey;
+}
+@media only screen and (min-width: 280px) and (max-width: 326px) {
   .container {
     width: 100vw;
     height: auto;
-    margin: 0px 2.5vw;
+    margin: 0px;
     /* padding: 07vh 05vw; */
   }
   .table {
@@ -141,11 +157,107 @@ footer .copyright {
     direction: ltr;
   }
   .venture-info .tour-img img {
-    width: 320px;
+    width: 255px;
     height: 220px;
     box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 10px 10px 17px 4px grey;
+  }
+  .venture-info .tour-info {
+    width: 255px;
+    margin-left: 10px;
+  }
+  .venture-info .tour-info .btn {
+    position: relative;
+    top: 5%;
+  }
+  .dummy-img {
+    width: 80vw;
+    height: 80vh;
+  }
+  /* contact Us */
+  .address {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+  }
+  .email-field {
+    display: grid;
+    grid-template-columns: auto auto;
+    place-items: center;
+  }
+  #field {
+    width: 40vw;
+    height: 10vh;
+  }
+  .map-venture {
+    width: 80vw;
+    height: 60vh;
+  }
+  .message {
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+    width: 100%;
+  }
+  #field-2 {
+    width: 82.5vw;
+    height: 20vh;
+    margin: 5vh 0;
+  }
+  .submit-btn #submit-button {
+    width: 30vw;
+  }
+  .footer-details {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 15vh;
+    font-size: smaller;
+  }
+  .copyright {
+    margin: 0 10vw;
+    top: 0%;
+    position: relative;
+  }
+  .dev-details {
+    top: 0%;
+    position: relative;
+    margin: 0 10vw;
+    text-align: right;
+    color: grey;
+  }
+}
+@media only screen and (min-width: 326px) and (max-width: 600px) {
+  .container {
+    width: 100vw;
+    height: auto;
+    margin: 0px;
+    /* padding: 07vh 05vw; */
+  }
+  .table {
+    font-size: smaller;
+  }
+  .venture-info {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 40px 0px;
+    direction: ltr;
+  }
+  .tour-img {
+    width: 300px;
+    margin-right: 0px;
+  }
+  .venture-info .tour-img img {
+    width: 300px;
+    height: 220px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 10px 10px 17px 4px grey;
+    margin-right: 0px;
   }
   .venture-info .tour-info {
     width: 320px;
@@ -191,6 +303,27 @@ footer .copyright {
   }
   .submit-btn #submit-button {
     width: 30vw;
+  }
+  .footer-details {
+    display: flex;
+    vertical-align: middle;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    height: 15vh;
+  }
+  .copyright {
+    margin: 0 10vw;
+    top: 0%;
+    position: relative;
+  }
+  .dev-details {
+    top: 0%;
+    position: relative;
+    margin: 0 10vw;
+    text-align: right;
+    color: grey;
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1048px) {

@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'venture-world.herokuapp.com',
     '127.0.0.1:8000',
-    '127.0.0.1'
+    '127.0.0.1',
+    'ventureworld.org'
 ]
 
 
@@ -36,6 +37,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'whitenoise.runserver_nostatic',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -80,10 +82,23 @@ WSGI_APPLICATION = 'venture_world.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+        'ENGINE': 'django.db.backends.postgresql',
+
+        'NAME': 'DEMO_TEST',
+
+        'USER': 'postgres',
+
+        'PASSWORD': 'maddy865210',
+
+        'HOST': 'localhost',
+
+        'PORT': '5432',
+
     }
+
 }
 
 
