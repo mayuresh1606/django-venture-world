@@ -12,7 +12,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Venture World</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -45,10 +45,12 @@
             <div class="pack">
                 <h3>{{ pack.package_type }}</h3> - {{ pack.package_name }}
                 <hr>
-
+                <div class="himachal-img" id="himachal-img">
+                    <img class="himachal-dummy-img" src="{{ pack.image.url }}" alt="err">
+                </div>
             </div>
         {% endfor %}
     </div>
-    {% endblock %}
+    {% endblock content %}
 </body>
 </html>

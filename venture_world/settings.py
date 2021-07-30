@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tours.apps.ToursConfig'
+    'tours.apps.ToursConfig',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -142,12 +143,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/tours/'
+
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 
-MEDIA_URL = '/images/'
+MEDIA_URL = 'https://s3.console.aws.amazon.com/s3/buckets/venture-world?region=ap-south-1&prefix=static/images/&showversions=false/'
 
 
 # Default primary key field type
@@ -162,3 +164,29 @@ EMAIL_HOST_USER = 'mayureshovhal1606@gmail.com'
 EMAIL_HOST_PASSWORD = 'mayu1234'
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
+
+
+# S3 BUCKETS CONFIG
+AWS_ACCESS_KEY_ID = 'AKIAYYGWRM3XHKMGQKFU'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'venture-world'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+AWS_S3_HOST = 's3.ap-south-1.amazonaws.com'
+AWS_S3_REGION_NAME = "ap-south-1"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''

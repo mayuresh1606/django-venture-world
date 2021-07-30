@@ -140,6 +140,13 @@ footer {
   margin: 0 10vw;
   color: grey;
 }
+.himachal-img {
+  text-align: center;
+}
+.himachal-img img {
+  width: 40vw;
+  height: 90vh;
+}
 @media only screen and (min-width: 280px) and (max-width: 326px) {
   .container {
     width: 100vw;
@@ -218,6 +225,10 @@ footer {
     height: 15vh;
     font-size: smaller;
   }
+  .himachal-img img {
+    width: 76vw;
+    height: 90vh;
+  }
   .copyright {
     margin: 0 10vw;
     top: 0%;
@@ -258,6 +269,10 @@ footer {
     border-radius: 20px;
     box-shadow: 10px 10px 17px 4px grey;
     margin-right: 0px;
+  }
+  .himachal-img img {
+    width: 76vw;
+    height: 90vh;
   }
   .venture-info .tour-info {
     width: 320px;
