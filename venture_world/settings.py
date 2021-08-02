@@ -157,6 +157,8 @@ MEDIA_URL = 'https://s3.console.aws.amazon.com/s3/buckets/venture-world?region=a
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# https://myaccount.google.com/lesssecureapps?pli=1&rapt=AEjHL4PquYTdw3PqNfHNVfOiCG7EquiwsiVw0QJo2AzpPaXYqSxOFcBESH_Tb7f5jw733DVnktYrN2UDy78VQb62ocuV616_cg
+
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'

@@ -73,6 +73,16 @@ figure img {
   direction: rtl;
   text-align: left;
 }
+.tour-links {
+  text-decoration: none;
+}
+.tour-package-names {
+  margin-right: 5px;
+  color: gray;
+}
+.tour-package-names:hover {
+  color: #a8a8a8;
+}
 .email-id {
   color: rgb(72, 72, 247);
 }

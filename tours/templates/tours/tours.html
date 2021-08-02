@@ -43,8 +43,12 @@
     <div class="container">
         <div class="tours">
             <h3>Tours</h3>
+            {% for pack_type in packageTypes %}
+            <a class="tour-links" href="#{{ pack_type }}"><span class="tour-package-names">{{ pack_type }}</span></a>
+            {% endfor %}
             <hr>
             {% for tour_type in packageTypes %}
+            <section id="{{ tour_type }}">
                 <div class="venture-info">
                     <div class="tour-img">
                         <img class="tour-img-bordered" src="{{ tour_type.image.url }}" alt="err">
@@ -96,6 +100,7 @@
                 </table>
                 <br>
                 <hr>
+            </section>
             {% endfor %}
         </div>
     </div>
