@@ -70,3 +70,14 @@
 
             }, time);
         }
+
+        const images = document.querySelectorAll('.link-img')
+        const displayImage = document.querySelector('.display-img')
+        images.forEach(function(image){
+            image.addEventListener('click', function(){
+                const imageSrc = image.src;
+                const imgTag = displayImage.querySelector('img')
+                imgTag.src = imageSrc
+                displayImage.classList.toggle('hidden')
+            })
+        })

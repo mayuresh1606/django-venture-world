@@ -42,11 +42,15 @@
                 </div>
             </nav>
         </header>
+        <div class="display-img hidden">
+            <div class="close-btn"></div>
+            <img class="disp-link-img" id="" src="#" alt="err">
+        </div>
         <div class="container edu-container">
             <div class="left-images">
                 {% for img in left_images %}
                 <div class="educational-img">
-                    <img class="edu-img" src="{{ img.image.url }}" 
+                    <img id="{{ img }}" class="edu-img link-img" src="{{ img.image.url }}" 
                     alt="err">
                 </div>
                 {% endfor %}
@@ -55,11 +59,11 @@
                 <center><h4>Educational Tours</h4></center>
                 <center>
                     {% for tour in educational_tours %}
-                    <section id="{{ tour.destination }} edu-sect">
+                    <section id="{{ tour.destination }}" class="edu-sect">
                     <h5 class="edu-heading">{{ tour.destination }}</h5>
                     <hr>
                     {% if not tour.out_of_state %}
-                    <table class="table edu-table table-striped">
+                    <table class="table table-bordered border-secondary edu-table">
                         <tbody>
                             <tr>
                                 <td>Duration</td>
@@ -92,7 +96,7 @@
                             <tr>
                                 <td>Tour Cost <br>(Inclusive of GST)</td>
                                 <td>
-                                    <table class="inside-table table-stripped">
+                                    <table class="inside-table table-bordered border-secondary">
                                         <tr>
                                             <td class="td-padding">Transportation</td>
                                             <td class="td-padding">Luxury Bus Non A/C</td>
@@ -110,7 +114,7 @@
                     </table>
                     {% endif %}
                     {% if tour.out_of_state %}
-                    <table class="table edu-table table-striped">
+                    <table class="table edu-table table-bordered border-secondary">
                         <tbody>
                             <tr>
                                 <td>Place of Visit</td>
@@ -140,7 +144,7 @@
                                 <td>Tour Cost <br>(Inclusive of GST) <br>
                                 Transportation</td>
                                 <td>
-                                    <table class="inside-table table-stripped">
+                                    <table class="inside-table table-bordered border-secondary">
                                         {% if tour.transportation_1 != 'False' %}
                                         <tr class="costs-row">
                                             <td class="tour-td-desc td-padding">{{tour.transportation_1}}</td>

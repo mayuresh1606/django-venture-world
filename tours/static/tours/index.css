@@ -32,7 +32,7 @@ header {
 .details-container {
   place-items: stretch;
 }
-#edu-sect {
+.edu-sect {
   margin: 25px 10px;
 }
 .educational-img,
@@ -95,6 +95,22 @@ header {
   margin: 0 5vw;
   height: 50vh;
   margin-bottom: 2.5vh;
+}
+.display-img {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+.close-btn {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.disp-link-img {
+  width: 40vw;
+  height: 65vh;
 }
 .top-td {
   border: 2px solid black;
@@ -389,7 +405,7 @@ footer {
     width: 57vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }
@@ -602,7 +618,7 @@ footer {
     width: 57vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }
@@ -820,7 +836,7 @@ footer {
     width: 50vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }

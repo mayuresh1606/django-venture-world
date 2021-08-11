@@ -25,10 +25,12 @@ def tours(request):
 
 def package_details(request, package_type, package_name, package_id):
     packages = IndividualPackage.objects.filter(pk=package_id)
+
     adventure = False
     if package_type == 'Adventure Tour':
         adventure = True
-    context = {'package': packages, 'adventure': adventure}
+    context = {'package': packages, 'adventure': adventure,
+               'package_name': package_name}
     return render(request, 'tours/package_detail.html', context)
 
 
