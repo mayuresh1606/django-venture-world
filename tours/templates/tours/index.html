@@ -49,7 +49,7 @@
     <div class="container">
       <h2 class="heading-venture">Welcome to Venture World</h2>
       <hr>
-      <p>Welcome to the Venture World to enjoy great getaways. Whilst assuring you the lifetime holiday experience & take you
+      <p class="venture-description">Welcome to the Venture World to enjoy great getaways. Whilst assuring you the lifetime holiday experience & take you
         to
         places dreams are made of. We aim to provide you a complete holiday package.
       
@@ -61,64 +61,154 @@
         visiting historical monuments and places and rediscover the varied rich culture, tradition, eternal costumes and
         vibrant
         colors spread all over the world.</p>
-      <div class="himachal-packages">
-        <h1>Himachal Packages</h1>
-        <p>VENTURE WORLD 25 YEARS OF TOURING EXPERINCE
-        
-          SPECIALITY IN GROUP PACKAGES AND ADVENTURE TOUR
-        
-          PRESENTS</p>
-          <p> - Exclusively the magnificent Himachal Pradesh</p>
-        <hr>
-        <table class="table table-striped table-dark">
-          <thead>
-            <tr>
-              <th scope="col">Destination</th>
-              <th scope="col">Duration</th>
-              <th scope="col">Rate Per Person</th>
-              <th scope="col">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for pack in package %}
-            <tr>
-              <td>{{ pack.destination_1 }} ({{ pack.destination_1_nights }}N) <br>
-                {% if pack.destination_2 != 'False' %}
-                {{ pack.destination_2 }} ({{ pack.destination_2_nights }}N)<br>
-                {% endif %}
-                {% if pack.destination_3 != 'False' %}
-                {{ pack.destination_3 }} ({{ pack.destination_3_nights }})
-                {% endif %}
-              </td>
-              <td>{{ pack.days }} - Days <br>
-                {{ pack.nights }} - Nights
-              </td>
-              <td>Starts From - ₹{{ pack.starts_from }}</td>
-              <td><a href="{% url 'package_detail' pack.package_type %}">Click for more details</a></td>
-            </tr>
+
+        <center><h5 class="venture-slogan">VENTURE WORLDS GLORIOUS 25 YEARS OF TOURING EXPERINCE</h5></center>
+
+        <div id="slideshow-example" data-component="slideshow">
+          <div role="list">
+            {% for img in banner_images %}
+            <div class="slide banner-img">
+              <img class="ban-img" src="{{ img.image.url }}" alt="err">
+            </div>
             {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      {% for type in pack_types %}
-      <div class="venture-info">
-        <div class="tour-img">
-          <img class="tour-img-bordered" src="{{ type.image.url }}" alt="err">
+          </div>
         </div>
-        <div class="tour-info">
-          <h3>{{ type.package_type }}</h3>
-          <hr>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus officia exercitationem quisquam natus ipsum autem, et maxime nam est nesciunt necessitatibus aut quam id omnis molestiae suscipit vel illum labore.</p>
-          {% for package in all_packages %}
-          {% if package.package_type == type %}
-          <span class="match-width package-name" id="package-id">{{ package.package_name }}</span>
-          {% endif %}
-          {% endfor %}
-          <br>
-          <button class="btn btn-info"><a href="{% url 'tour_details' type.package_type %}">Click to know more</a></button>
+
+        <!-- imp packages -->
+        <div class="imp-pack-top">
+          <div class="couple-box">
+            <p class="box-heading">Couple</p>
+            <hr>
+            {% for package in all_packages %}
+              {% if package.important %}
+                {% if 'oney' in package.package_type.package_type or 'ouple' in package.package_type.package_type %}
+                  <a class="aside-content" href="{% url 'tour_details' package.package_type %}"><span>{{package.package_name}}</span></a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="family-tours-box">
+            <p class="box-heading">Family Tours</p>
+            <hr>
+            {% for package in all_packages %}
+              {% if package.important %}
+                {% if 'amily' in package.package_type.package_type %}
+                <a class="aside-content" href="{% url 'tour_details' package.package_type %}"><span>{{package.package_name}}</span></a>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="educational-tours-box">
+            <p class="box-heading">Group Tours</p>
+            <hr>
+            {% for package in group_sub_packages %}
+              <a class="aside-content" href="{% url 'tour_details' 'Group Tour' %}#{{ package.group_sub_package }}"><span class="aside-content margin-right">{{ package.group_sub_package }}</span></a><br>
+            {% endfor %}
+          </div>
         </div>
+        <div class="my-tables">
+          <div class="imp-packs">
+            {% for pack_type in imp_pack_types %}
+              <h3 class="imp-heading">{{ pack_type }}</h3>
+              <hr>
+              <table class="table table-striped table-dark table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Duration</th>
+                    <th scope="col">Rate Per Person</th>
+                    <th scope="col">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for imp_pack in imp_packages %}
+                  {% if imp_pack.important_package_type == pack_type %}
+                  <tr>
+                    <td>{{ imp_pack.destination_1 }} ({{ imp_pack.destination_1_nights }}N) <br>
+                      {% if imp_pack.destination_2 != 'False' %}
+                      {{ imp_pack.destination_2 }} ({{ imp_pack.destination_2_nights }}N)<br>
+                      {% endif %}
+                      {% if imp_pack.destination_3 != 'False' %}
+                      {{ imp_pack.destination_3 }} ({{ imp_pack.destination_3_nights }})
+                      {% endif %}
+                    </td>
+                    <td>{{ imp_pack.days }} - Days <br>
+                      {{ imp_pack.nights }} - Nights
+                    </td>
+                    <td>Starts From - ₹{{ imp_pack.starts_from }}</td>
+                    <td><a href="{% url 'package_detail' imp_pack.package_type imp_pack.package_name imp_pack.id %}">Click for more
+                        details</a></td>
+                  </tr>
+                  {% endif %}
+                  {% endfor %}
+                </tbody>
+              </table>
+            {% endfor %}
+            
+          </div>
+          <div class="aside-tables">
+            <div class="educational-tours">
+              <a class="aside-heading" href="{% url 'educational_tours' %}"><h3 class="aside-content-heading">Educational Tours</h3></a>
+              <hr class="box-hr">
+              <p>
+                {% for tour in educational_tours %}
+                {% if tour.important %}
+                <span><a class="aside-content" href="{% url 'educational_tours' %}#{{ tour.destination }}">{{ tour.destination }}</a></span>
+                {% endif %}
+                {% endfor %}
+              </p>
+            </div>
+            <div class="adventure-tours">
+              <a class="aside-heading" href="{% url 'tour_details' 'Adventure Tour' %}"><h3 class="aside-content-heading">Adventure Tours</h3></a>
+              <hr>
+              <p>
+                {% for tour in adventure_tours %}
+                {% if tour.important %}
+                <span><a class="aside-content" href="{% url 'package_detail' tour.package_type tour.package_name tour.id %}">{{ tour.package_name }}</a></span>
+                {% endif %}
+                {% endfor %}
+              </p>
+            </div>
+            <div class="pilgrimage">
+              <a class="aside-heading" href="{% url 'tour_details' 'Pilgrimage' %}"><h3 class="aside-content-heading">Pilgrimage</h3></a>
+              <hr class="box-hr">
+              <p>
+                {% for tour in pilgrimages %}
+                {% if tour.important %}
+                <span><a class="aside-content" href="{% url 'package_detail' tour.package_type tour.package_name tour.id %}">{{ tour.package_name }}</a></span>
+                {% endif %}
+                {% endfor %}
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <!-- end of imp packs -->
+        <hr>
+        {% for type in pack_types %}
+        <div class="venture-info">
+          <div class="tour-img">
+            <img class="tour-img-bordered" src="{{ type.image.url }}" alt="err">
+          </div>
+          <div class="tour-info">
+            <h3>{{ type.package_type }}</h3>
+            <hr>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus officia exercitationem quisquam natus ipsum autem, et maxime nam est nesciunt necessitatibus aut quam id omnis molestiae suscipit vel illum labore.</p>
+            {% for package in all_packages %}
+            {% if package.package_type == type %}
+            <span class="match-width package-name" id="package-id">{{ package.package_name }}</span>
+            {% endif %}
+            {% endfor %}
+            <br>
+            {% if 'ducational' in type.package_type %}
+            <button class="btn btn-info"><a href="{% url 'educational_tours' %}">Click to know more</a></button>
+            {% else %}
+            <button class="btn btn-info"><a href="{% url 'tour_details' type.package_type %}">Click to know more</a></button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor pack_types %} 
       </div>
-      {% endfor pack_types %} 
     </div>
     <footer>
       <div class="footer-details">

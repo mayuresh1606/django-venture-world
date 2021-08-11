@@ -3,7 +3,7 @@ from django.db.models.lookups import In
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from .models import IndividualPackage, Day, Night, PackageType
+from .models import GroupSubPackage, IndividualPackage, Day, Night, PackageType, EducationalTour, LeftImage, RightImage
 from django.core.mail import send_mail
 
 
@@ -15,8 +15,6 @@ def tours(request):
         packages_type = package_type.individualpackage_set.all()
         tours_package.append(packages_type)
     for pack in tours_package:
-        print(len(tours_package))
-        print(len(pack))
         for pac in pack:
             print(pac.package_name)
 
@@ -25,15 +23,12 @@ def tours(request):
     return render(request, 'tours/tours.html', context)
 
 
-def package_details(request, package_type):
-    packages = PackageType.objects.get(package_type=package_type)
-    package = packages.individualpackage_set.all()
-    list = []
-    for pack in package:
-        if pack.package_name == 'Himachal':
-            list.append(pack)
-
-    context = {'package': list}
+def package_details(request, package_type, package_name, package_id):
+    packages = IndividualPackage.objects.filter(pk=package_id)
+    adventure = False
+    if package_type == 'Adventure Tour':
+        adventure = True
+    context = {'package': packages, 'adventure': adventure}
     return render(request, 'tours/package_detail.html', context)
 
 
@@ -46,10 +41,15 @@ def individual_package_detail(request, package_id):
 def tourDetails(request, package_type):
     packagesType = PackageType.objects.get(package_type=package_type)
     tourPackage = packagesType.individualpackage_set.all()
+
+    group_packages = GroupSubPackage.objects.all()
+    packageType = package_type
+
     pack = ''
     for pack_name in package_type:
         pack += pack_name
-    context = {'tour_package': tourPackage, 'package_type': pack}
+    context = {'tour_package': tourPackage,
+               'package_types': packagesType, 'group_packages': group_packages, 'package_type': packageType}
     return render(request, 'tours/tour_details.html', context)
 
 
@@ -83,3 +83,14 @@ def contact_us(request):
 def indiv_pack(request):
     packages = IndividualPackage.objects.all()
     return render(request, 'tours/indiv_pack.html', context={'packages': packages})
+
+
+def educational_tours(request):
+    educational_tours = EducationalTour.objects.all()
+
+    left_images = LeftImage.objects.all()
+    right_images = RightImage.objects.all()
+
+    context = {'educational_tours': educational_tours,
+               'left_images': left_images, 'right_images': right_images}
+    return render(request, 'tours/educational_tours.html', context)

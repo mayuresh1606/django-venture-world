@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+    <title>Educational Tours</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content %}
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Venture World</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'services' %}">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <div class="container edu-container">
+            <div class="left-images">
+                {% for img in left_images %}
+                <div class="educational-img">
+                    <img class="edu-img" src="{{ img.image.url }}" 
+                    alt="err">
+                </div>
+                {% endfor %}
+            </div>
+            <div class="edu-tables">
+                <center><h4>Educational Tours</h4></center>
+                <center>
+                    {% for tour in educational_tours %}
+                    <section id="{{ tour.destination }} edu-sect">
+                    <h5 class="edu-heading">{{ tour.destination }}</h5>
+                    <hr>
+                    {% if not tour.out_of_state %}
+                    <table class="table edu-table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Duration</td>
+                                <td>{{ tour.nights }} NIGHT - {{ tour.days }} DAYS</td>
+                            </tr>
+                            <tr>
+                                <td>Place of Visit</td>
+                                <td>{{ tour.places_of_visit }}</td>
+                            </tr>
+                            <tr>
+                                <td>Accomodation</td>
+                                <td>Luxury / Star Hotel / Resort ( 4/5 sharing)</td>
+                            </tr>
+                            <tr>
+                                <td>Food</td>
+                                <td>Veg (Breakfast, Lunch, Evening Snacks &amp; Dinner ) along with Snack
+                                
+                                Hampers, Mineral Water &amp; Frooti</td>
+                            </tr>
+                            <tr>
+                                <td>Other Services</td>
+                                <td>1 Teacher for every 15 students,1 Escort for every 20 students Guide/
+                                
+                                Instructor Service. Entry fees.</td>
+                            </tr>
+                            <tr>
+                                <td>Complimentry</td>
+                                <td>Insurance of Rs. 50,000/ each during the tour.</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Cost <br>(Inclusive of GST)</td>
+                                <td>
+                                    <table class="inside-table table-stripped">
+                                        <tr>
+                                            <td class="td-padding">Transportation</td>
+                                            <td class="td-padding">Luxury Bus Non A/C</td>
+                                            <td class="td-padding">Rs. {{ tour.lux_bus_non_ac }}/-</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="td-padding"></td>
+                                            <td class="td-padding">Luxury Bus A/C</td>
+                                            <td class="td-padding">Rs. {{ tour.lux_bus_ac }}/-</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% endif %}
+                    {% if tour.out_of_state %}
+                    <table class="table edu-table table-striped">
+                        <tbody>
+                            <tr>
+                                <td>Place of Visit</td>
+                                <td>{{ tour.places_of_visit }}</td>
+                            </tr>
+                            <tr>
+                                <td>Accomodation</td>
+                                <td>Luxury / Star Hotel / Resort ( 4/5 sharing)</td>
+                            </tr>
+                            <tr>
+                                <td>Food</td>
+                                <td>Veg (Breakfast, Lunch, Evening Snacks &amp; Dinner ) along with Snack
+                                
+                                Hampers, Mineral Water &amp; Frooti</td>
+                            </tr>
+                            <tr>
+                                <td>Other Services</td>
+                                <td>1 Teacher for every 15 students,1 Escort for every 20 students Guide/
+                                
+                                Instructor Service. Entry fees.</td>
+                            </tr>
+                            <tr>
+                                <td>Complimentry</td>
+                                <td>Insurance of Rs. 50,000/ each during the tour.</td>
+                            </tr>
+                            <tr>
+                                <td>Tour Cost <br>(Inclusive of GST) <br>
+                                Transportation</td>
+                                <td>
+                                    <table class="inside-table table-stripped">
+                                        {% if tour.transportation_1 != 'False' %}
+                                        <tr class="costs-row">
+                                            <td class="tour-td-desc td-padding">{{tour.transportation_1}}</td>
+                                            <td class="td-dur-fs td-padding">{{tour.transportation_1_nights}} NIGHTS - {{ tour.transportation_1_days }} DAYS</td>
+                                            <td class="td-padding">Rs. {{ tour.transportation_1_cost_non_ac }}/- <br>
+                                            Rs. {{ tour.transportation_1_cost_ac }} /- A/C BUS</td>
+                                        </tr>
+                                        {% endif %}
+                                        {% if tour.transportation_2 != 'False' %}
+                                        <tr class="costs-row">
+                                            <td class="tour-td-desc td-padding">{{tour.transportation_2}}</td>
+                                            <td class="td-dur-fs td-padding">{{tour.transportation_2_nights}} NIGHTS - {{ tour.transportation_2_days }} DAYS</td>
+                                            <td class="td-padding">Rs. {{ tour.transportation_2_cost_non_ac }}/- <br>
+                                                Rs. {{ tour.transportation_2_cost_ac }} /- A/C BUS</td>
+                                        </tr>
+                                        {% endif %}
+                                        {% if tour.transportation_3 != 'False' %}
+                                        <tr class="costs-row">
+                                            <td class="tour-td-desc td-padding">{{tour.transportation_3}}</td>
+                                            <td class="td-dur-fs td-padding">{{tour.transportation_3_nights}} NIGHTS - {{ tour.transportation_3_days }} DAYS</td>
+                                            <td class="td-padding">Rs. {{ tour.transportation_3_cost_non_ac }}/- <br>
+                                            Rs. {{ tour.transportation_3_cost_ac }} /- A/C BUS</td>
+                                        </tr>
+                                        {% endif %}
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    {% endif %}
+                    </section>
+                    {% endfor %}
+                </center>
+            </div>
+            <div class="right-images">
+                {% for img in right_images %}
+                    <div class="educational-img">
+                        <img class="edu-img" src="{{ img.image.url }}" alt="err">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endblock %}
+</body>
+</html>

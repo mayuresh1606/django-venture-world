@@ -19,6 +19,194 @@ header {
   background-color: rgb(236, 235, 235);
   padding: 07vh 5vw;
 }
+.left-images,
+.right-images {
+  height: 100%;
+}
+.edu-container,
+.details-container {
+  display: grid;
+  grid-template-columns: 15vw 40vw 15vw;
+  place-items: center;
+}
+.details-container {
+  place-items: stretch;
+}
+#edu-sect {
+  margin: 25px 10px;
+}
+.educational-img,
+.detailed-tour-img {
+  border: 2px solid grey;
+  width: 215px;
+  margin-bottom: 15px;
+}
+.edu-img,
+.detail-tour-img {
+  width: 180px;
+  height: 130px;
+  margin: 15px;
+}
+#all-group {
+  width: 95%;
+}
+.costs-row {
+  border-bottom: 1px solid grey;
+}
+.tour-td-desc {
+  padding: 5px 10px;
+}
+/* slide show */
+.imp-pack-top {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  place-items: center;
+}
+.box-heading {
+  text-align: center;
+  height: 30px;
+  background-color: bisque;
+  margin-top: 5px;
+  font-weight: bold;
+}
+.margin-right {
+  margin-right: 8px;
+}
+.couple-box,
+.family-tours-box,
+.educational-tours-box {
+  border: 2px solid grey;
+  width: 19vw;
+  min-height: 28vh;
+}
+[data-component='slideshow'] .slide {
+  display: none;
+}
+[data-component='slideshow'] .slide.active {
+  display: block;
+  width: 70vw;
+}
+.banner-img {
+  width: 70vw;
+  height: auto;
+}
+.ban-img {
+  width: 60vw;
+  margin: 0 5vw;
+  height: 50vh;
+  margin-bottom: 2.5vh;
+}
+.top-td {
+  border: 2px solid black;
+}
+.my-tables {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 7vh;
+}
+.imp-packs {
+  width: 50vw;
+  margin-right: 1.5vw;
+}
+.aside-tables {
+  width: 20vw;
+  margin-left: 1.5vw;
+}
+.aside-heading {
+  text-decoration: none;
+  color: chocolate;
+}
+.aside-content {
+  color: grey;
+  text-decoration: none;
+  margin-left: 3px;
+}
+.aside-content:hover {
+  color: black;
+}
+.inside-table {
+  min-width: 30vw;
+}
+.educational-tours,
+.adventure-tours,
+.pilgrimage {
+  min-height: 40vh;
+  width: 17vw;
+  border: 2px solid grey;
+  margin-bottom: 3vh;
+  padding: 0 10px;
+}
+.educational-tours span,
+.adventure-tours span,
+.pilgrimage span {
+  margin-right: 4px;
+}
+.package-content {
+  display: grid;
+  place-items: center;
+  width: 65vw;
+  height: auto;
+}
+.package-details {
+  height: 90vh;
+  width: 40vw;
+  background-color: rgb(120, 120, 214);
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.col-1 {
+  width: 17vw;
+}
+.left-img {
+  width: 15vw;
+  height: 10vh;
+}
+.col-2 {
+  width: 23vw;
+}
+.box {
+  width: 15vw;
+  text-align: center;
+  border: 2px solid greenyellow;
+  margin-bottom: 10px;
+}
+.box-2 {
+  width: 20vw;
+  text-align: center;
+  border: 2px solid greenyellow;
+}
+.heading-box-2 {
+  text-align: left;
+}
+.line {
+  margin: 0;
+}
+.underline {
+  text-decoration: underline;
+}
+.highlight {
+  text-decoration: solid;
+}
+.venture-slogan {
+  color: orange;
+}
+.head-line {
+  margin: 0 0 7px 0;
+}
+.details-box {
+  margin-top: 2.5vh;
+  width: 20vw;
+  height: 30vh;
+}
+.detail-images {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 10px;
+}
+.detailed-img {
+  width: 10vw;
+  height: 15vh;
+}
 .match-width,
 .card {
   max-width: 300px;
@@ -164,6 +352,124 @@ footer {
     margin: 0px;
     /* padding: 07vh 05vw; */
   }
+  .edu-container,
+  .details-container {
+    display: grid;
+    grid-template-columns: 18vw 60vw 18vw;
+    place-items: center;
+    padding: 7vh 2vw;
+  }
+  .details-container {
+    place-items: stretch;
+  }
+  .edu-heading {
+    font-size: medium;
+  }
+  .venture-description {
+    font-size: small;
+    margin-top: 15px;
+  }
+  .table {
+    font-size: smaller;
+  }
+  .edu-table {
+    font-size: 0.3rem !important;
+  }
+  .td-padding {
+    padding: 3px;
+  }
+  .ban-img {
+    width: 80vw;
+    margin: 0 5vw;
+    height: 25vh;
+    margin-bottom: 2.5vh;
+  }
+  .edu-tables {
+    margin: 0px 0.4rem;
+    width: 57vw;
+    font-size: 0.6rem;
+  }
+  #edu-sect {
+    margin: 25px 10px;
+    font-size: smaller;
+  }
+  .table-responsive {
+    max-width: 55vw;
+    font-size: 0.4rem !important;
+  }
+  .aside-tables {
+    width: 39vw;
+    margin-left: 1.5vw;
+  }
+  .educational-tours,
+  .adventure-tours,
+  .pilgrimage {
+    min-height: 35vh;
+    width: 37.5vw;
+    border: 2px solid grey;
+    margin: 0 5px 3vh;
+    padding: 0 10px;
+  }
+  .aside-content-heading {
+    font-size: medium;
+  }
+  .educational-tours span,
+  .adventure-tours span,
+  .pilgrimage span {
+    margin-right: 4px;
+    font-size: small;
+  }
+  .left-images,
+  .right-images {
+    height: 100%;
+    width: 18vw;
+  }
+  .educational-img,
+  .detailed-tour-img {
+    border: 2px solid grey;
+    width: 18.7vw;
+    margin-bottom: 15px;
+  }
+  .edu-img,
+  .detail-tour-img {
+    width: 17vw;
+    height: 9vh;
+    margin: 1px;
+  }
+  #all-group {
+    width: 100%;
+  }
+  .couple-box,
+  .family-tours-box,
+  .educational-tours-box {
+    border: 2px solid grey;
+    width: 28vw;
+    min-height: 28vh;
+  }
+  hr {
+    margin: 0.5rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+  }
+  .box-heading {
+    text-align: center;
+    height: 18px;
+    background-color: bisque;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  .aside-content {
+    color: grey;
+    text-decoration: none;
+    font-size: 0.7rem;
+  }
+  .imp-heading {
+    font-size: 1.1rem;
+  }
   .table {
     font-size: smaller;
   }
@@ -259,8 +565,123 @@ footer {
     margin: 0px;
     /* padding: 07vh 05vw; */
   }
+  .edu-container,
+  .details-container {
+    display: grid;
+    grid-template-columns: 18vw 60vw 18vw;
+    place-items: center;
+    padding: 7vh 2vw;
+  }
+  .details-container {
+    place-items: stretch;
+  }
+  .edu-heading {
+    font-size: medium;
+  }
+  .venture-description {
+    font-size: small;
+    margin-top: 15px;
+  }
   .table {
     font-size: smaller;
+  }
+  .edu-table {
+    font-size: 0.4rem !important;
+  }
+  .td-padding {
+    padding: 3px;
+  }
+  .ban-img {
+    width: 80vw;
+    margin: 0 5vw;
+    height: 25vh;
+    margin-bottom: 2.5vh;
+  }
+  .edu-tables {
+    margin: 0px 0.4rem;
+    width: 57vw;
+    font-size: 0.6rem;
+  }
+  #edu-sect {
+    margin: 25px 10px;
+    font-size: smaller;
+  }
+  .table-responsive {
+    max-width: 55vw;
+    font-size: 0.5rem;
+  }
+  .aside-tables {
+    width: 39vw;
+    margin-left: 1.5vw;
+  }
+  .educational-tours,
+  .adventure-tours,
+  .pilgrimage {
+    min-height: 35vh;
+    width: 37.5vw;
+    border: 2px solid grey;
+    margin: 0 5px 3vh;
+    padding: 0 10px;
+  }
+  .aside-content-heading {
+    font-size: medium;
+  }
+  .educational-tours span,
+  .adventure-tours span,
+  .pilgrimage span {
+    margin-right: 4px;
+    font-size: small;
+  }
+  .left-images,
+  .right-images {
+    height: 100%;
+    width: 18vw;
+  }
+  .educational-img,
+  .detailed-tour-img {
+    border: 2px solid grey;
+    width: 18.7vw;
+    margin-bottom: 15px;
+  }
+  .edu-img,
+  .detail-tour-img {
+    width: 17vw;
+    height: 9vh;
+    margin: 1px;
+  }
+  #all-group {
+    width: 100%;
+  }
+  .couple-box,
+  .family-tours-box,
+  .educational-tours-box {
+    border: 2px solid grey;
+    width: 28vw;
+    min-height: 28vh;
+  }
+  hr {
+    margin: 0.5rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+  }
+  .box-heading {
+    text-align: center;
+    height: 18px;
+    background-color: bisque;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+  .aside-content {
+    color: grey;
+    text-decoration: none;
+    font-size: 0.7rem;
+  }
+  .imp-heading {
+    font-size: 1.1rem;
   }
   .venture-info {
     display: grid;
@@ -357,6 +778,129 @@ footer {
     height: auto;
     margin: 0px 2.5vw;
     padding: 07vh 05vw;
+  }
+  .edu-container,
+  .details-container {
+    display: grid;
+    grid-template-columns: 18vw 53vw 18vw;
+    place-items: center;
+    padding: 7vh 2vw;
+  }
+  .details-container {
+    place-items: center;
+  }
+  .edu-heading {
+    font-size: medium;
+  }
+  .venture-description {
+    font-size: larger;
+    margin-top: 15px;
+  }
+  .table {
+    font-size: smaller;
+  }
+  .edu-table {
+    font-size: 1rem !important;
+  }
+  .td-padding {
+    padding: 3px;
+  }
+  .ban-img {
+    width: 75vw;
+    margin: 0 5vw;
+    height: 25vh;
+    margin-bottom: 2.5vh;
+  }
+  .imp-packs {
+    width: 55vw;
+    margin-right: 1.5vw;
+  }
+  .edu-tables {
+    margin: 0px 0.4rem;
+    width: 50vw;
+    font-size: 0.6rem;
+  }
+  #edu-sect {
+    margin: 25px 10px;
+    font-size: smaller;
+  }
+  .table-responsive {
+    max-width: 55vw;
+    font-size: 1rem;
+  }
+  .aside-tables {
+    width: 29vw;
+    margin-left: 1.5vw;
+  }
+  .educational-tours,
+  .adventure-tours,
+  .pilgrimage {
+    min-height: 20vh;
+    width: 25.5vw;
+    border: 2px solid grey;
+    margin: 0 5px 3vh;
+    padding: 0 10px;
+  }
+  .aside-content-heading {
+    font-size: x-large;
+  }
+  .educational-tours span,
+  .adventure-tours span,
+  .pilgrimage span {
+    margin-right: 4px;
+    font-size: small;
+  }
+  .left-images,
+  .right-images {
+    height: 100%;
+    width: 18vw;
+  }
+  .educational-img,
+  .detailed-tour-img {
+    border: 2px solid grey;
+    width: 17.7vw;
+    margin-bottom: 15px;
+  }
+  .edu-img,
+  .detail-tour-img {
+    width: 17vw;
+    height: 9vh;
+    margin: 1px;
+  }
+  #all-group {
+    width: 100%;
+  }
+  .couple-box,
+  .family-tours-box,
+  .educational-tours-box {
+    border: 2px solid grey;
+    width: 25vw;
+    min-height: 21vh;
+    margin: 20px 10px;
+  }
+  hr {
+    margin: 0.5rem 0;
+    color: inherit;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+  }
+  .box-heading {
+    text-align: center;
+    height: 35px;
+    background-color: bisque;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+  }
+  .aside-content {
+    color: grey;
+    text-decoration: none;
+    font-size: large;
+  }
+  .imp-heading {
+    font-size: 2.1rem;
   }
   .navbar {
     font-size: x-large;

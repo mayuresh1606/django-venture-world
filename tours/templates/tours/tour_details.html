@@ -5,14 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour Details</title>
+    {% block title %}
+    <title>{{ package_type }}</title>
+    {% endblock %}
   </head>
   <body>
     {% block content %}
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Venture World</a>
+          <a class="navbar-brand" href="{% url 'index' %}">Venture World</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -51,45 +53,139 @@
         </div>
       </nav>
     </header>
-    <div class="container">
-      <h5>{{ package_type }}</h5>
-      <hr />
-      <table class="table table-striped table-dark">
-        <thead>
-          <tr>
-            <th scope="col">Package</th>
-            <th scope="col">Destinations</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Rate Per Person</th>
-            <th scope="col">Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for package in tour_package %}
-          <tr>
-            <td>{{ package.package_name }}</td>
-            <td>
-              {{ package.destination_1 }} ({{ package.destination_1_nights }}N)
-              <br />
-              {% if package.destination_2 != 'False' %} 
-              {{ package.destination_2}} 
-              ({{ package.destination_2_nights }}N) 
+    <div class="container details-container edu-container details-container">
+      <div class="left-images">
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_1.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_2.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_3.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_4.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_5.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.left_image_6.url }}" alt="err">
+        </div>
+        <!-- <h3>{{ package_type }}</h3> -->
+      </div>
+      <div class="group-sections edu-tables">
+      {% if package_type == 'Group Tour' %}
+      {% for pack in group_packages %}
+        <section id="{{ pack }}">
+          <h4>{{ pack }} - Group Tours</h4>
+          <hr>
+          <table class="table table-striped table-dark edu-table">
+            <thead>
+              <tr>
+                <th scope="col">Package</th>
+                <th scope="col">Destinations</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Rate Per Person</th>
+                <th scope="col">Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for package in tour_package %}
+              {% if package.group_packages == pack %}
+              <tr>
+                <td>{{ package.package_name }}</td>
+                <td>
+                  {{ package.destination_1 }} ({{ package.destination_1_nights }}N)
+                  <br />
+                  {% if package.destination_2 != 'False' %} 
+                  {{ package.destination_2}} 
+                  ({{ package.destination_2_nights }}N) 
+                  {% endif %}
+                </td>
+                <td>
+                  {{ package.days }} - Days <br />
+                  {{ package.nights }} - Nights
+                </td>
+                <td>Starts From - ₹{{ package.starts_from }}</td>
+                <td>
+                  <a href="{% url 'package_detail' package.package_type package.package_name package.id %}"
+                  >Click for more details</a
+                  >
+                </td>
+              </tr>
               {% endif %}
-            </td>
-            <td>
-              {{ package.days }} - Days <br />
-              {{ package.nights }} - Nights
-            </td>
-            <td>Starts From - ₹{{ package.starts_from }}</td>
-            <td>
-              <a href="{% url 'individual_package_detail' package.id %}"
+              {% endfor %}
+            </tbody>
+          </table>
+        </section>
+        {% endfor %}
+      <!-- </div> -->
+      
+      {% else %}
+      <section id="all-group">
+        <h5>{{ package_type }}</h5>
+        <hr />
+        <table class="table table-striped table-dark edu-table">
+          <thead>
+            <tr>
+              <th scope="col">Package</th>
+              <th scope="col">Destinations</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Rate Per Person</th>
+              <th scope="col">Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for package in tour_package %}
+            <tr>
+              <td>{{ package.package_name }}</td>
+              <td>
+                {{ package.destination_1 }} ({{ package.destination_1_nights }}N)
+                <br />
+                {% if package.destination_2 != 'False' %} 
+                {{ package.destination_2}} 
+                ({{ package.destination_2_nights }}N) 
+                {% endif %}
+              </td>
+              <td>
+                {{ package.days }} - Days <br />
+                {{ package.nights }} - Nights
+              </td>
+              <td>Starts From - ₹{{ package.starts_from }}</td>
+              <td>
+                <a href="{% url 'package_detail' package.package_type package.package_name package.id %}"
                 >Click for more details</a
-              >
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+      {% endif %}
+    </div>
+      <div class="right-images">
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_1.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_2.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_3.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_4.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_5.url }}" alt="err">
+        </div>
+        <div class="detailed-tour-img">
+          <img class="detail-tour-img" src="{{ package_types.right_image_6.url }}" alt="err">
+        </div>
+      </div>
     </div>
     {% endblock content %}
   </body>

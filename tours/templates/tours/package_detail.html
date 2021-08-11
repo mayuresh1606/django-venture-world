@@ -45,8 +45,116 @@
             <div class="pack">
                 <h3>{{ pack.package_type }}</h3> - {{ pack.package_name }}
                 <hr>
-                <div class="himachal-img" id="himachal-img">
+                <!-- <div class="himachal-img" id="himachal-img">
                     <img class="himachal-dummy-img" src="{{ pack.image.url }}" alt="err">
+                </div> -->
+                <center><h4>Tour Itineraries</h4></center>
+                <hr>
+                <table class="table table-striped table-bordered">
+                    <tbody>
+                        {% if pack.itinerary_date_1 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_1 }}</td>
+                            <td>{{ pack.itinerary_description_1 }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if pack.itinerary_date_2 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_2 }}</td>
+                            <td>{{ pack.itinerary_description_2 }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if pack.itinerary_date_3 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_3 }}</td>
+                            <td>{{ pack.itinerary_description_3 }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if pack.itinerary_date_4 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_4 }}</td>
+                            <td>{{ pack.itinerary_description_4 }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if pack.itinerary_date_5 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_5 }}</td>
+                            <td>{{ pack.itinerary_description_5 }}</td>
+                        </tr>
+                        {% endif %}
+                        {% if pack.itinerary_date_6 != 'False' %}
+                        <tr>
+                            <td>{{ pack.itinerary_date_6 }}</td>
+                            <td>{{ pack.itinerary_description_6 }}</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+                {% if adventure %}
+                <center><p>Note :- As mentioned above the aim of the tour is adventure activities, however in extreme conditions due to unfavourable
+                weather we may opt for sight
+                seeing. In case departure &amp; arrival is at Delhi then the duration of the tour will be 7 days. The itinerary is
+                flexible and subject to changes.</p></center>
+                {% endif %}
+                <div class="tour-details">
+                    <center><h5>Tour Details</h5></center>
+                    <p><span class="highlight underline"> Tour Cost Includes :-</span></p>
+                    <p><span class="highlight">Accomodation: </span>Deluxe/ Star Hotels/ Resorts(4/5 sharing).</p>
+                    <p><span class="highlight">Transportation: </span>2 Way Flight, Ac luxury bus.</p>
+                    <p><span class="highlight">Food: </span>Jain/ Veg/ Non Veg (Breakfast, Lunch, Evening Snacks &amp; Dinner along with Snack Hampers, Mineral Water &amp; Frooti)</p>
+                    <p><span class="highlight">Guide/ InstructorService. Entry fees.</span></p>
+                    <p><span class="highlight">Complimentary: </span>Insurance of Rs. 50,000/ each during the tour.</p>
+                    <p><span class="highlight underline">Tour Cost does not Includes :-</span>*Camera fees, laundry, telephone calls, room service bills. *Any other expenses not within the preview of “tour cost
+                    includes”.
+                    *Any increase in Transport fares, fuel cost, taxes, etc before or after the departure of the tour will have to be borne
+                    by the participants. Any increase in the
+                    duration of the tour due to circumstances beyond the control of the tour operator will have to be borne by the
+                    participants &amp; reimbursed after the tour.
+                    Instances of this type would include but not be limited to the following- delays in transit, missed connections, bad
+                    weather, natural calamities, road blocks, civil
+                    disturbances, strikes, agitations, bandhs, war, quarantine, etc. *Any damage to private or public property by the
+                    participants will have to be reimbursed by the
+                    responsible person or group.</p>
+                    <p><span class="underline"><span class="highlight">Cancellation :-</span>(Refund of full amount) </span>135 days prior to the tour 80%. 134 – 60 days prior to the tour 40%. 59 – 30 days prior to the tour amount refunded
+                    30%. From 29 to 10 days prior to the tour amount refunded 20%. No amount will be refunded if cancelled prior to 9 days
+                    of the journey.</p>
+                </div>
+                <div class="tour-information">
+                    <h5>Tour Information</h5>
+                    <p>Inclusions</p>
+                    <ul>
+                        <li>To and Fro economy class air ticket (Ex-Mumbai) with current airport taxes</li>
+                        <li>Baggage Allowance as per the airline policy</li>
+                        <li>Travel by comfortable A/C or non A/C small cars or Tempo Travellers or Mini Buses or big buses depending on the
+                        respective tour
+                        group size</li>
+                        <li>Accommodation in comfortable hotels on twin/triple/Single sharing basis</li>
+                        <li>All Meals – Morning tea/coffee, breakfast, lunch, evening tea/coffee with cookies/snacks, dinner and Water Bottle (1
+                        Litre) per person
+                        per day</li>
+                        <li>Guide &amp; driver tips, hotel &amp; restaurants tips</li>
+                        <li>Permits/ entrance fees of all sightseeing places which is to be visited from inside</li>
+                        <li>Accompanied local guide/s services wherever require</li>
+                        <li>Veena World Tour Manager Services from Day 01 Meeting point till the dropping point on last day</li>
+                    </ul>
+                    <p>Exclusions</p>
+                    <ul>
+                        <li>Government of India Goods &amp; Services Tax (GST) of 5%</li>
+                        <li>Any increase in airfare, airport tax, fuel surcharge etc.</li>
+                        <li>Any new tax/es levied by the central or state government</li>
+                        <li>Cost of Insurance</li>
+                        <li>Any upgradation in airline class, vehicle, hotel or hotel room category</li>
+                        <li>Cost of Pre/Post tour hotel accommodation</li>
+                        <li>Any extra expense incurred due to any forced majeure situation before the tour departure or during the tour, such as
+                        change in airline
+                        schedule, route or operation, changing the tour date, change in hotel etc.</li>
+                        <li>Personal expense like porterage, laundry, telephone, shopping, alcoholic beverages, extra mineral water or food which is
+                        not a part of
+                        group’s set meal menu</li>
+                        <li>Any extra cost incurred due to illness, accident, hospitalization or any personal emergency</li>
+                        <li>Cost of any optional activity or service</li>
+                        <li>Anything specifically not mentioned in the ‘tour price includes’ column</li>
+                    </ul>
                 </div>
             </div>
         {% endfor %}

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8$)fqb2#@xyc+ghdm689$v##@vwjy*2(0o-o)_%+9okcnkyb-u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = [
@@ -143,10 +143,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/tours/'
+STATIC_URL = '/tours/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
+# STATICFILES_DIRS = [
+#     BASE_DIR/'tours/static/',
+#     BASE_DIR/'static/',
+# ]
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 
 MEDIA_URL = 'https://s3.console.aws.amazon.com/s3/buckets/venture-world?region=ap-south-1&prefix=static/images/&showversions=false/'
