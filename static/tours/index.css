@@ -10,7 +10,7 @@ header {
   min-height: 12vh;
   width: 100vw;
 }
-.container {
+.my-container {
   width: 80vw;
   margin: 0px 10vw;
   height: auto;
@@ -32,7 +32,7 @@ header {
 .details-container {
   place-items: stretch;
 }
-#edu-sect {
+.edu-sect {
   margin: 25px 10px;
 }
 .educational-img,
@@ -95,6 +95,22 @@ header {
   margin: 0 5vw;
   height: 50vh;
   margin-bottom: 2.5vh;
+}
+.display-img {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+.close-btn {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.disp-link-img {
+  width: 40vw;
+  height: 65vh;
 }
 .top-td {
   border: 2px solid black;
@@ -346,7 +362,7 @@ footer {
   height: 90vh;
 }
 @media only screen and (min-width: 280px) and (max-width: 326px) {
-  .container {
+  .my-container {
     width: 100vw;
     height: auto;
     margin: 0px;
@@ -389,7 +405,7 @@ footer {
     width: 57vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }
@@ -559,7 +575,7 @@ footer {
   }
 }
 @media only screen and (min-width: 326px) and (max-width: 600px) {
-  .container {
+  .my-container {
     width: 100vw;
     height: auto;
     margin: 0px;
@@ -602,7 +618,7 @@ footer {
     width: 57vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }
@@ -773,8 +789,11 @@ footer {
   }
 }
 @media only screen and (min-width: 600px) and (max-width: 1048px) {
-  .container {
-    width: 100%;
+  .my-container {
+    width: 100vw !important;
+  }
+  .my-container {
+    width: 100% !important;
     height: auto;
     margin: 0px 2.5vw;
     padding: 07vh 05vw;
@@ -808,7 +827,7 @@ footer {
   .ban-img {
     width: 75vw;
     margin: 0 5vw;
-    height: 25vh;
+    height: 40vh;
     margin-bottom: 2.5vh;
   }
   .imp-packs {
@@ -820,7 +839,7 @@ footer {
     width: 50vw;
     font-size: 0.6rem;
   }
-  #edu-sect {
+  .edu-sect {
     margin: 25px 10px;
     font-size: smaller;
   }
@@ -875,7 +894,7 @@ footer {
   .educational-tours-box {
     border: 2px solid grey;
     width: 25vw;
-    min-height: 21vh;
+    min-height: 45vh;
     margin: 20px 10px;
   }
   hr {

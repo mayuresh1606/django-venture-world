@@ -1,4 +1,5 @@
         // adding limit to package names inside individual package
+        let currentYearDOM = document.querySelector(".current-year")
         let tourInfo = document.body.querySelectorAll('.tour-info')
         let packageName = document.body.querySelectorAll('.package-name')
         for(let i=0;i < tourInfo.length;i++){
@@ -10,6 +11,9 @@
                 }
             }
         }
+
+        // adding current year in footer
+        currentYearDOM.textContent = new Date().getFullYear();
 
         // adding reverse field on homepage
         let ventureInfo = document.body.querySelectorAll('.venture-info')
