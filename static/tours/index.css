@@ -790,10 +790,7 @@ footer {
 }
 @media only screen and (min-width: 600px) and (max-width: 1048px) {
   .my-container {
-    width: 100vw !important;
-  }
-  .my-container {
-    width: 100% !important;
+    width: 95vw !important;
     height: auto;
     margin: 0px 2.5vw;
     padding: 07vh 05vw;
