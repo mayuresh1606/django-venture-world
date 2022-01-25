@@ -14,5 +14,7 @@ urlpatterns = [
          name='individual_package_detail'),
     path('EducationalTours', views.educational_tours,
          name='educational_tours'),
+    path("packageName/<str:package_type>", views.package_name_details,
+         name="package_name_details"),
     path('<package_type>', views.tourDetails, name='tour_details'),
 ]

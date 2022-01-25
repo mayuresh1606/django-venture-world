@@ -227,6 +227,24 @@ header {
 .card {
   max-width: 300px;
 }
+.green-color {
+  color: green;
+}
+.blue-color {
+  color: rgb(66, 66, 182);
+}
+.maroon-color {
+  color: maroon;
+}
+.purple-color {
+  color: purple;
+}
+.red-color {
+  color: red;
+}
+.darkblue-color {
+  color: darkblue;
+}
 figure,
 .tour-info {
   margin: 30px;
@@ -269,6 +287,9 @@ figure img {
   padding: 5px 10px;
   text-decoration: none;
   color: black;
+}
+.font-weight {
+  font-weight: 700;
 }
 .hidden {
   visibility: hidden;

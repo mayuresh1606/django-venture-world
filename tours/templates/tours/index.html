@@ -109,32 +109,26 @@
                 <thead>
                   <tr>
                     <th scope="col">Destination</th>
-                    <th scope="col">Duration</th>
-                    <th scope="col">Rate Per Person</th>
+                    <th scope="col">Starting @</th>
                     <th scope="col">Details</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {% for imp_pack in imp_packages %}
-                  {% if imp_pack.important_package_type == pack_type %}
                   <tr>
-                    <td>{{ imp_pack.destination_1 }} ({{ imp_pack.destination_1_nights }}N) <br>
-                      {% if imp_pack.destination_2 != 'False' %}
-                      {{ imp_pack.destination_2 }} ({{ imp_pack.destination_2_nights }}N)<br>
+                    <td>
+                      <span>{{pack_type}}</span> <br>
+                      <!-- {% for imp_pack in imp_packages %}
+                      {% if imp_pack.important_package_type == pack_type %}
+                        {{ imp_pack.destination_1 }} /
                       {% endif %}
-                      {% if imp_pack.destination_3 != 'False' %}
-                      {{ imp_pack.destination_3 }} ({{ imp_pack.destination_3_nights }})
-                      {% endif %}
+                      {% endfor %} -->
+                      SHIMLA / MANALI / DHARAMSHALA / DALHOUSIE /
+                      PALAMPUR / PRAGPUR / CHANDIGARH (U.T) / AMRITSAR (PB)
                     </td>
-                    <td>{{ imp_pack.days }} - Days <br>
-                      {{ imp_pack.nights }} - Nights
-                    </td>
-                    <td>Starts From - ₹{{ imp_pack.starts_from }}</td>
-                    <td><a href="{% url 'package_detail' imp_pack.package_type imp_pack.package_name imp_pack.id %}">Click for more
+                    <td>₹10000</td>
+                    <td><a href="{% url 'package_name_details' pack_type %}">Click for more
                         details</a></td>
                   </tr>
-                  {% endif %}
-                  {% endfor %}
                 </tbody>
               </table>
             </section>

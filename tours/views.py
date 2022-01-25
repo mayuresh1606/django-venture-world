@@ -1,9 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.db.models.lookups import In
-from django.http import request
-from django.http.response import HttpResponse
-from django.shortcuts import render, get_object_or_404
-from .models import GroupSubPackage, IndividualPackage, Day, Night, PackageType, EducationalTour, LeftImage, RightImage
+from django.shortcuts import render
+from .models import ImportantPackage, GroupSubPackage, IndividualPackage, Day, Night, PackageType, EducationalTour, LeftImage, RightImage
 from django.core.mail import send_mail
 
 
@@ -14,13 +11,23 @@ def tours(request):
     for package_type in packageTypes:
         packages_type = package_type.individualpackage_set.all()
         tours_package.append(packages_type)
-    for pack in tours_package:
-        for pac in pack:
-            print(pac.package_name)
 
     context = {'packageTypes': packageTypes,
                'packages': packages, 'tours_packages': tours_package}
     return render(request, 'tours/tours.html', context)
+
+
+# get page according to package name
+
+def package_name_details(request, package_type):
+    imp_package_type = ImportantPackage.objects.get(
+        important_package=package_type)
+
+    packages = imp_package_type.individualpackage_set.all()
+
+    context = {"package_type": package_type, "packages": packages}
+
+    return render(request, "tours/package_name.html", context)
 
 
 def package_details(request, package_type, package_name, package_id):
