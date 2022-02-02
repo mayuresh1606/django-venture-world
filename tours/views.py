@@ -20,14 +20,12 @@ def tours(request):
 # get page according to package name
 
 def package_name_details(request, package_type):
-    imp_package_type = ImportantPackage.objects.get(
-        important_package=package_type)
 
-    packages = imp_package_type.individualpackage_set.all()
-
-    context = {"package_type": package_type, "packages": packages}
-
-    return render(request, "tours/package_name.html", context)
+    context = {"package_type": package_type}
+    if (package_type == "Himachal"):
+        return render(request, "tours/package_name.html", context)
+    elif (package_type == "Karnataka"):
+        return render(request, "tours/package_name_karnataka.html", context)
 
 
 def package_details(request, package_type, package_name, package_id):

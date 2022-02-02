@@ -10,30 +10,28 @@
 <body>
     {% block content %}
         <header>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Venture World</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+            <nav class="navbar">
+                <div class="nav-contents">
+                    <div style="text-align: center;" class="site-logo">
+                        <h1 class="venture-logo">VENTURE WORLD</h1>
+                        <h6 class="venture-logo-desc">Tour, Trek, Picnic, Pilgrimage</h6>
+                    </div>
+                    <div class="site-navigations">
+                        <ul class="ul">
+                            <li class="ul-background">
+                                <a class="nav-link darkblue-color" aria-current="page" href="{% url 'index' %}">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                            <li class="ul-background">
+                                <a class="nav-link darkblue-color" href="{% url 'tours' %}">Tours</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'services' %}">Services</a>
+                            <li class="ul-background">
+                                <a class="nav-link darkblue-color" href="{% url 'services' %}">Services</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+                            <li class="ul-background">
+                                <a class="nav-link darkblue-color" href="{% url 'contact-us' %}">Contact Us</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+                            <li class="ul-background">
+                                <a class="nav-link darkblue-color" href="{% url 'terms' %}">Terms</a>
                             </li>
                         </ul>
                     </div>

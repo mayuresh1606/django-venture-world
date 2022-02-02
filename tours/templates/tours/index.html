@@ -10,36 +10,28 @@
   <body>
     {% block content %}
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Venture World</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+      <nav class="navbar">
+        <div class="nav-contents">
+          <div style="text-align: center;" class="site-logo">
+            <h1 class="venture-logo">VENTURE WORLD</h1>
+            <h6 class="venture-logo-desc">Tour, Trek, Picnic, Pilgrimage</h6>
+          </div>
+          <div class="site-navigations">
+            <ul class="ul">
+              <li class="ul-background">
+                <a class="nav-link darkblue-color" aria-current="page" href="{% url 'index' %}">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+              <li class="ul-background">
+                <a class="nav-link darkblue-color" href="{% url 'tours' %}">Tours</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'services' %}">Services</a>
+              <li class="ul-background">
+                <a class="nav-link darkblue-color" href="{% url 'services' %}">Services</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
+              <li class="ul-background">
+                <a class="nav-link darkblue-color" href="{% url 'contact-us' %}">Contact Us</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'terms' %}">Terms</a>
+              <li class="ul-background">
+                <a class="nav-link darkblue-color" href="{% url 'terms' %}">Terms</a>
               </li>
             </ul>
           </div>
@@ -73,37 +65,48 @@
             {% endfor %}
           </div>
         </div>
-
+        
         <!-- imp packages -->
         <div class="imp-pack-top">
-          <div class="couple-box">
-            <p class="box-heading">Couple</p>
-            <center><a class="aside-content" href="{% url 'tour_details' 'Honeymoon' %}"><span>HoneyMoon special</span></a></center>
-            <hr>
-              {% for package in imp_pack_types %}
-                <a class="aside-content" href="#{{package}}"><span>{{package.important_package}}</span></a><br>
-              {% endfor %}
+          <div class="left-boxes">
+            <a class="tour-links" href="#tours-tables"><div class="box box-bg-yellow">
+              <p class="box-heading">Couple</p>
+            </div></a>
+            <a class="tour-links" href="#tours-tables"><div class="box box-bg-pink">
+              <p class="box-heading">HoneyMoon Special</p>
+            </div></a>
+            <a class="tour-links" href="#tours-tables"><div class="box box-bg-green">
+              <p class="box-heading">Family</p>
+            </div></a>
           </div>
-          <div class="family-tours-box">
-            <p class="box-heading">Family Tours</p>
-            <hr>
-            {% for package in imp_pack_types %}
-                <a class="aside-content" href="#{{package}}"><span>{{package.important_package}}</span></a><br>
-            {% endfor %}
-          </div>
-          <div class="educational-tours-box">
-            <p class="box-heading">Group Tours</p>
-            <hr>
-            {% for package in group_sub_packages %}
-              <a class="aside-content" href="{% url 'tour_details' 'Group Tour' %}#{{ package.group_sub_package }}"><span class="aside-content margin-right">{{ package.group_sub_package }}</span></a><br>
-            {% endfor %}
+          <!-- <center><a class="aside-content" href="{% url 'tour_details' 'Honeymoon' %}"><span>HoneyMoon special</span></a></center> -->
+          <!-- {% for package in imp_pack_types %}
+              <a class="aside-content" href="#{{package}}"><span>{{package.important_package}}</span></a><br>
+          {% endfor %} -->
+          <div class="right-box">
+            <table class="table table-bordered group-table border-secondary">
+              <th colspan="2">
+                <center class="darkblue-color font-weight">GROUP</center>
+              </th>
+              <tr>
+                <td><p class="box-heading"> STUDENTS</p></td>
+                <td><p class="box-heading"> CORPORATE</p></td>
+              </tr>
+              <tr>
+                <td><p class="box-heading"> SOCIETIES</p></td>
+                <td><p class="box-heading"> LADIES EXCLUSIVE</p></td>
+              </tr>
+              <tr>
+                <td><p class="box-heading"> SENIOR CITIZENS</p></td>
+                <td><p class="box-heading"> BUDDIES</p></td>
+              </tr>
+            </table>
           </div>
         </div>
         <div class="my-tables">
           <div class="imp-packs">
-            {% for pack_type in imp_pack_types %}
-            <section id="{{pack_type}}">
-              <h3 class="imp-heading">{{ pack_type }}</h3>
+            <section id="tours-tables">
+              <h3 class="imp-heading">FABULOUS HIMACHAL</h3>
               <hr>
               <table class="table table-striped table-dark table-responsive">
                 <thead>
@@ -116,60 +119,60 @@
                 <tbody>
                   <tr>
                     <td>
-                      <span>{{pack_type}}</span> <br>
-                      <!-- {% for imp_pack in imp_packages %}
-                      {% if imp_pack.important_package_type == pack_type %}
-                        {{ imp_pack.destination_1 }} /
-                      {% endif %}
-                      {% endfor %} -->
+                      <span>Fabulous Himachal -</span> <br>
                       SHIMLA / MANALI / DHARAMSHALA / DALHOUSIE /
                       PALAMPUR / PRAGPUR / CHANDIGARH (U.T) / AMRITSAR (PB)
                     </td>
-                    <td>₹10000</td>
-                    <td><a href="{% url 'package_name_details' pack_type %}">Click for more
+                    <td>₹17,750/- per person</td>
+                    <td><a href="{% url 'package_name_details' 'Himachal' %}">Click for more
+                        details</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Karnataka Table -->
+              <h3 class="imp-heading">MAJESTIC KARNATAKA</h3>
+              <hr>
+              <table class="table table-striped table-dark table-responsive">
+                <thead>
+                  <tr>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Starting @</th>
+                    <th scope="col">Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>MAJESTIC KARNATAKA –</span> <br>
+                      BENGALURU / MYSURU / OOTY (TN) / HASSAN / COORG /
+                      CHIKMAGALUR / CHITRADURGA / HAMPI / BADAMI /
+                      MANGALURU / GOA
+                    </td>
+                    <td>₹16,750/- per person</td>
+                    <td><a href="{% url 'package_name_details' 'Karnataka' %}">Click for more
                         details</a></td>
                   </tr>
                 </tbody>
               </table>
             </section>
-            {% endfor %}
             
           </div>
           <div class="aside-tables">
-            <div class="educational-tours">
-              <a class="aside-heading" href="{% url 'educational_tours' %}"><h3 class="aside-content-heading">Educational Tours</h3></a>
-              <hr class="box-hr">
-              <p>
-                {% for tour in educational_tours %}
-                {% if tour.important %}
-                <span><a class="aside-content" href="{% url 'educational_tours' %}#{{ tour.destination }}">{{ tour.destination }}</a></span>
-                {% endif %}
-                {% endfor %}
-              </p>
-            </div>
-            <div class="adventure-tours">
-              <a class="aside-heading" href="{% url 'tour_details' 'Adventure Tour' %}"><h3 class="aside-content-heading">Adventure Tours</h3></a>
-              <hr>
-              <p>
-                {% for tour in adventure_tours %}
-                {% if tour.important %}
-                <span><a class="aside-content" href="{% url 'package_detail' tour.package_type tour.package_name tour.id %}">{{ tour.package_name }}</a></span>
-                {% endif %}
-                {% endfor %}
-              </p>
-            </div>
-            <div class="pilgrimage">
-              <a class="aside-heading" href="{% url 'tour_details' 'Pilgrimage' %}"><h3 class="aside-content-heading">Pilgrimage</h3></a>
-              <hr class="box-hr">
-              <p>
-                {% for tour in pilgrimages %}
-                {% if tour.important %}
-                <span><a class="aside-content" href="{% url 'package_detail' tour.package_type tour.package_name tour.id %}">{{ tour.package_name }}</a></span>
-                {% endif %}
-                {% endfor %}
-              </p>
-
-            </div>
+            <a style="text-decoration: none;" href="{% url 'educational_tours' %}">
+              <div class="box-2 box-bg-purple">
+                <p class="box-heading">Educational Tours</p>
+              </div>
+            </a>
+            <a style="text-decoration: none;" href="{% url 'tour_details' 'Adventure Tour' %}">
+              <div class="box-2 box-bg-darkgreen">
+                <p class="box-heading">Adventure Camp</p>
+              </div>
+            </a>
+            <a style="text-decoration: none;" href="{% url 'tour_details' 'pilgrimage' %}">
+              <div class="box-2 box-bg-red">
+                <p class="box-heading">Pilgrimage</p>
+              </div>
+            </a>
           </div>
         </div>
         <!-- end of imp packs -->
