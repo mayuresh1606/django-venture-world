@@ -9,9 +9,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+from email.policy import default
 import dj_database_url
 import os
-# from ..secrets import secrets
+from decouple import config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-8$)fqb2#@xyc+ghdm689$v##@vwjy*2(0o-o)_%+9okcnkyb-u"
+SECRET_KEY = config("SECRET_KEY", default="")
+# SECRET_KEY = "django-insecure-8$)fqb2#@xyc+ghdm689$v##@vwjy*2(0o-o)_%+9okcnkyb-u"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -95,7 +97,7 @@ DATABASES = {
 
         'USER': 'postgres',
 
-        'PASSWORD': 'maddy865210',
+        'PASSWORD': config("DB_PASS", default=""),
 
         'HOST': 'localhost',
 
@@ -153,7 +155,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # ]
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/images')
 
-MEDIA_URL = 'https://s3.console.aws.amazon.com/s3/buckets/venture-world?region=ap-south-1&prefix=static/images/&showversions=false/'
+MEDIA_URL = config("MEDIA_URL", default="")
 
 
 # Default primary key field type
@@ -166,15 +168,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'mayureshovhal1606@gmail.com'
-EMAIL_HOST_PASSWORD = 'jmmlwehzmfhnhseh'
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default="")
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default="")
 EMAIL_USE_TLS = True
 # EMAIL_USE_SSL = False
 
 
 # S3 BUCKETS CONFIG
-AWS_ACCESS_KEY_ID = 'AKIAYYGWRM3XHKMGQKFU'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY_ID", default="")
+AWS_SECRET_ACCESS_KEY = config("AWS_SECRET_ACCESS_KEY", default="")
 AWS_STORAGE_BUCKET_NAME = 'venture-world'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
