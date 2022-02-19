@@ -134,3 +134,61 @@ class LeftImage(models.Model):
 class RightImage(models.Model):
     image_number = models.IntegerField(default=0)
     image = models.ImageField()
+
+
+class CurrentTours(models.Model):
+    name = models.CharField(max_length=255)
+
+    tour_number = models.IntegerField()
+
+    comfort_name = models.CharField(max_length=1024)
+    comfort_duration = models.CharField(max_length=50)
+    comfort_rate = models.CharField(max_length=50)
+
+    compact_name = models.CharField(max_length=1024)
+    compact_duration = models.CharField(max_length=50)
+    compact_rate = models.CharField(max_length=50)
+
+    itinerary_day_1 = models.CharField(max_length=2055)
+    itinerary_day_2 = models.CharField(max_length=2055)
+    itinerary_day_3 = models.CharField(max_length=2055)
+    itinerary_day_4 = models.CharField(max_length=2055)
+    itinerary_day_5 = models.CharField(max_length=2055, default=False)
+    itinerary_day_6 = models.CharField(max_length=2055, default=False)
+    itinerary_day_7 = models.CharField(max_length=2055, default=False)
+    itinerary_day_8 = models.CharField(max_length=2055, default=False)
+    itinerary_day_9 = models.CharField(max_length=2055, default=False)
+    itinerary_day_10 = models.CharField(max_length=2055, default=False)
+    itinerary_day_11 = models.CharField(max_length=2055, default=False)
+    itinerary_day_12 = models.CharField(max_length=2055, default=False)
+    itinerary_day_13 = models.CharField(max_length=2055, default=False)
+
+    regular_grp_comfort_rate_1 = models.CharField(max_length=255)
+    regular_grp_comfort_rate_2 = models.CharField(max_length=255)
+    regular_grp_comfort_rate_3 = models.CharField(max_length=255)
+    regular_grp_comfort_rate_4 = models.CharField(max_length=255)
+    regular_grp_compact_rate_1 = models.CharField(max_length=255)
+    regular_grp_compact_rate_2 = models.CharField(max_length=255)
+    regular_grp_compact_rate_3 = models.CharField(max_length=255)
+    regular_grp_compact_rate_4 = models.CharField(max_length=255)
+
+    regular_couple_comfort_rate_1 = models.CharField(max_length=255)
+    regular_couple_comfort_rate_2 = models.CharField(max_length=255)
+    regular_couple_comfort_rate_3 = models.CharField(max_length=255)
+    regular_couple_comfort_rate_4 = models.CharField(max_length=255)
+    regular_couple_compact_rate_1 = models.CharField(max_length=255)
+    regular_couple_compact_rate_2 = models.CharField(max_length=255)
+    regular_couple_compact_rate_3 = models.CharField(max_length=255)
+    regular_couple_compact_rate_4 = models.CharField(max_length=255)
+
+    scheduled_rate_1 = models.CharField(max_length=255)
+    scheduled_rate_2 = models.CharField(max_length=255)
+
+    accommodation_1 = models.CharField(max_length=1024)
+    accommodation_2 = models.CharField(max_length=1024)
+    accommodation_3 = models.CharField(max_length=1024, default=False)
+    accommodation_4 = models.CharField(max_length=1024, default=False)
+    accommodation_5 = models.CharField(max_length=1024, default=False)
+    accommodation_6 = models.CharField(max_length=1024, default=False)
+
+    GST = models.CharField(max_length=3, default=5)

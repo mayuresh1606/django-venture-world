@@ -1,6 +1,8 @@
+from asyncio import current_task
+from threading import currentThread
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render
-from .models import ImportantPackage, GroupSubPackage, IndividualPackage, Day, Night, PackageType, EducationalTour, LeftImage, RightImage
+from .models import ImportantPackage, GroupSubPackage, IndividualPackage, Day, Night, PackageType, EducationalTour, LeftImage, RightImage, CurrentTours
 from django.core.mail import send_mail
 
 
@@ -101,3 +103,13 @@ def educational_tours(request):
     context = {'educational_tours': educational_tours,
                'left_images': left_images, 'right_images': right_images}
     return render(request, 'tours/educational_tours.html', context)
+
+
+# Important Current tours
+def current_tours(request, tour_name):
+    current_tours = CurrentTours.objects.filter(name=tour_name)
+    current_tours = current_tours.order_by("tour_number")
+
+    context = {"tours": current_tours, "tour_name": tour_name}
+
+    return render(request, "tours/current_tours.html", context)

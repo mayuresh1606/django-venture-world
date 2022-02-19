@@ -12,6 +12,8 @@ urlpatterns = [
     path('indiv-pack', views.indiv_pack, name='indiv-pack'),
     path('<int:package_id>', views.individual_package_detail,
          name='individual_package_detail'),
+    path('tourName/<str:tour_name>', views.current_tours,
+         name='current_package_details'),
     path('EducationalTours', views.educational_tours,
          name='educational_tours'),
     path("packageName/<str:package_type>", views.package_name_details,

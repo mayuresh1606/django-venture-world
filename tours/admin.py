@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import IndividualPackage, PackageType, Night, Day, BannerImage, EducationalTour, GroupSubPackage, LeftImage, RightImage, ImportantPackage
+from .models import IndividualPackage, PackageType, Night, Day, BannerImage, EducationalTour, GroupSubPackage, LeftImage, RightImage, ImportantPackage, CurrentTours
 
 
 class PackageTypeAdmin(admin.ModelAdmin):
@@ -8,6 +8,10 @@ class PackageTypeAdmin(admin.ModelAdmin):
 
 class IndividualPackageAdmin(admin.ModelAdmin):
     list_display = ['package_name', 'package_type']
+
+
+class CurrentToursAdmin(admin.ModelAdmin):
+    list_display = ['name', "comfort_name"]
 
 
 class DaysAdmin(admin.ModelAdmin):
@@ -39,6 +43,7 @@ class ImportantPackageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(IndividualPackage, IndividualPackageAdmin)
+admin.site.register(CurrentTours, CurrentToursAdmin)
 admin.site.register(PackageType, PackageTypeAdmin)
 admin.site.register(Day, DaysAdmin)
 admin.site.register(Night, NightsAdmin)
