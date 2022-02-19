@@ -9,6 +9,13 @@ header {
 .navbar {
   min-height: 12vh;
   width: 100vw;
+  background: linear-gradient(133deg, #d5baba, #b1b1b100) !important;
+}
+.nav-contents {
+  display: grid;
+  margin: 0 auto;
+  place-content: center;
+  height: auto;
 }
 .my-container {
   width: 80vw;
@@ -59,15 +66,14 @@ header {
 /* slide show */
 .imp-pack-top {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   place-items: center;
 }
 .box-heading {
   text-align: center;
-  height: 30px;
-  background-color: bisque;
-  margin-top: 5px;
-  font-weight: bold;
+  color: black;
+  font-weight: 800;
+  font-size: 1rem;
 }
 .margin-right {
   margin-right: 8px;
@@ -180,16 +186,65 @@ header {
 .col-2 {
   width: 23vw;
 }
+.left-boxes {
+  padding: 0;
+}
 .box {
-  width: 15vw;
+  width: 15rem;
+  height: 7rem;
+  border-radius: 15px 50px;
   text-align: center;
-  border: 2px solid greenyellow;
+  display: grid;
+  place-content: center;
   margin-bottom: 10px;
 }
+.box-bg-pink {
+  background: linear-gradient(222deg, #d87ac1, transparent) !important;
+}
+.box-bg-yellow {
+  background: linear-gradient(222deg, #dfdd76, transparent) !important;
+}
+.box-bg-green {
+  background: linear-gradient(222deg, #70d370, transparent) !important;
+}
+.box-bg-purple {
+  background: linear-gradient(222deg, #ba6fdd, transparent) !important;
+}
+.box-bg-darkgreen {
+  background: linear-gradient(222deg, #52ee3d, transparent) !important;
+}
+.box-bg-red-orange {
+  background: linear-gradient(222deg, #ff9c00, transparent) !important;
+}
+.grey-bg-table {
+  color: black;
+  font-weight: 400;
+  background: linear-gradient(
+    120deg,
+    rgb(224, 223, 223),
+    transparent
+  ) !important;
+}
+.new-content {
+  color: black;
+  font-weight: 600;
+}
 .box-2 {
-  width: 20vw;
+  width: 15rem;
+  height: 7rem;
+  border-radius: 50px 15px;
+  background: linear-gradient(45deg, #79c2e5, transparent);
   text-align: center;
-  border: 2px solid greenyellow;
+  display: grid;
+  place-content: center;
+  margin-bottom: 10px;
+}
+.font-weight-light {
+  font-weight: 600;
+}
+.group-table {
+  width: 30rem;
+  height: 17rem;
 }
 .heading-box-2 {
   text-align: left;
@@ -204,7 +259,8 @@ header {
   text-decoration: solid;
 }
 .venture-slogan {
-  color: orange;
+  color: crimson;
+  font-weight: 600;
 }
 .head-line {
   margin: 0 0 7px 0;
@@ -231,7 +287,13 @@ header {
   color: green;
 }
 .blue-color {
-  color: rgb(66, 66, 182);
+  color: rgb(66, 66, 182) !important;
+}
+.lightblue-color {
+  color: rgb(0, 191, 255);
+}
+.brown-color {
+  color: brown;
 }
 .maroon-color {
   color: maroon;
@@ -245,6 +307,7 @@ header {
 .darkblue-color {
   color: darkblue;
 }
+
 figure,
 .tour-info {
   margin: 30px;
@@ -287,6 +350,18 @@ figure img {
   padding: 5px 10px;
   text-decoration: none;
   color: black;
+}
+.ul {
+  background-color: #d7c2c6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  width: 80vw;
+  padding: 0;
+}
+.ul-background:hover {
+  background-color: rgb(209, 134, 134);
 }
 .font-weight {
   font-weight: 700;
@@ -382,12 +457,58 @@ footer {
   width: 40vw;
   height: 90vh;
 }
+.venture-logo {
+  font-size: 2.5rem;
+  color: #4b4b97;
+  font-family: skope, serif;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.venture-logo-desc {
+  font-style: italic;
+  color: crimson;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
 @media only screen and (min-width: 280px) and (max-width: 326px) {
   .my-container {
     width: 100vw;
     height: auto;
     margin: 0px;
     /* padding: 07vh 05vw; */
+  }
+  .ul {
+    font-size: 0.8rem;
+    width: 100vw;
+  }
+  .venture-logo {
+    font-size: 1.5rem;
+    color: #4b4b97;
+    font-family: skope, serif;
+    font-weight: 800;
+  }
+  .venture-logo-desc {
+    font-style: italic;
+    color: crimson;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .venture-slogan {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  .imp-pack-top {
+    grid-template-columns: 30% 70%;
+  }
+  .box,
+  .box-2 {
+    width: 32vw;
+    height: 5rem;
+    border-radius: 15px 40px;
+  }
+  .group-table {
+    width: 100%;
+    height: 15rem;
   }
   .edu-container,
   .details-container {
@@ -492,12 +613,9 @@ footer {
   }
   .box-heading {
     text-align: center;
-    height: 18px;
-    background-color: bisque;
-    margin-top: 5px;
     font-weight: bold;
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+    color: black;
+    font-size: 1rem;
   }
   .aside-content {
     color: grey;
@@ -600,7 +718,40 @@ footer {
     width: 100vw;
     height: auto;
     margin: 0px;
-    /* padding: 07vh 05vw; */
+    padding: 02vh 05vw;
+  }
+  .venture-logo {
+    font-size: 1.5rem;
+    color: #4b4b97;
+    font-family: skope, serif;
+    font-weight: 800;
+  }
+  .venture-logo-desc {
+    font-style: italic;
+    color: crimson;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .ul {
+    font-size: 0.8rem;
+    width: 100vw;
+  }
+  .venture-slogan {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .imp-pack-top {
+    grid-template-columns: 30% 70%;
+  }
+  .box,
+  .box-2 {
+    width: 32vw;
+    height: 5rem;
+    border-radius: 15px 40px;
+  }
+  .group-table {
+    width: 100%;
+    height: 15rem;
   }
   .edu-container,
   .details-container {
@@ -705,12 +856,9 @@ footer {
   }
   .box-heading {
     text-align: center;
-    height: 18px;
-    background-color: bisque;
-    margin-top: 5px;
     font-weight: bold;
-    font-size: 0.8rem;
-    margin-bottom: 5px;
+    color: black;
+    font-size: 0.7rem;
   }
   .aside-content {
     color: grey;
@@ -833,6 +981,9 @@ footer {
     font-size: larger;
     margin-top: 15px;
   }
+  .imp-pack-top {
+    grid-template-columns: 30% 70%;
+  }
   .table {
     font-size: smaller;
   }
@@ -847,6 +998,10 @@ footer {
     margin: 0 5vw;
     height: 40vh;
     margin-bottom: 2.5vh;
+  }
+  .group-table {
+    width: 100%;
+    height: 15rem;
   }
   .imp-packs {
     width: 55vw;
@@ -924,12 +1079,9 @@ footer {
   }
   .box-heading {
     text-align: center;
-    height: 35px;
-    background-color: bisque;
-    margin-top: 5px;
     font-weight: bold;
-    font-size: 1.4rem;
-    margin-bottom: 5px;
+    color: black;
+    font-size: 1rem;
   }
   .aside-content {
     color: grey;

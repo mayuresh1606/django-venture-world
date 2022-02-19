@@ -15,12 +15,6 @@
         // adding current year in footer
         currentYearDOM.textContent = new Date().getFullYear();
 
-        // adding reverse field on homepage
-        let ventureInfo = document.body.querySelectorAll('.venture-info')
-        for(let i=1;i<=ventureInfo.length - 1; i += 2){
-            ventureInfo[i].classList.add('reverse')
-        }
-
         // setting rows length in tours.html to 3 for now
         const tableBody = document.querySelectorAll('.table-body')
         tableBody.forEach(function(table){
@@ -32,21 +26,7 @@
                 }
             }
         })
-
-        // collapsing navbar
-
-        const navBarCollapse = document.getElementById('navbarSupportedContent');
-        console.log(navBarCollapse)
-        const navBtn = document.body.querySelector('.navbar-toggler');
-        console.log(navBtn)
-        navBtn.addEventListener('click', function(){
-            const hide = navBarCollapse.classList.contains('show');
-            console.log(hide)
-            if (hide) {
-                navBarCollapse.classList.remove('show', 'collapse')
-            }
-        })
-
+        
         // JQuery for slide show
 
         var slideshows = document.querySelectorAll('[data-component="slideshow"]');
@@ -55,7 +35,7 @@
         slideshows.forEach(initSlideShow);
 
         function initSlideShow(slideshow) {
-
+            console.log(slideshow);
             var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`); // Get an array of slides
 
             var index = 0, time = 5000;
