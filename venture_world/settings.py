@@ -33,7 +33,8 @@ ALLOWED_HOSTS = [
     'venture-world.herokuapp.com',
     '127.0.0.1:8000',
     '127.0.0.1',
-    'ventureworld.in'
+    'ventureworld.in',
+    'limitless-gorge-31131.herokuapp.com'
 ]
 
 
