@@ -8,6 +8,12 @@ def index(request):
 
     imp_packages = IndividualPackage.objects.filter(important=True)
 
+    pilgrimage = PackageType.objects.filter(package_type='Pilgrimage')
+    adventure_tour = PackageType.objects.filter(package_type='Adventure Tour')
+
+    # pilgrimages = pilgrimage.individualpackage_set.all()
+    # adventure_tours = adventure_tour.individualpackage_set.all()
+
     imp_package_types = ImportantPackage.objects.all()
     for imp_pack in imp_packages:
         imp_pack_name = imp_pack.package_name
@@ -17,12 +23,6 @@ def index(request):
     all_packages = IndividualPackage.objects.all()
     banner_images = BannerImage.objects.all()
 
-    pilgrimage = PackageType.objects.get(package_type='Pilgrimage')
-    adventure_tour = PackageType.objects.get(package_type='Adventure Tour')
-
-    pilgrimages = pilgrimage.individualpackage_set.all()
-    adventure_tours = adventure_tour.individualpackage_set.all()
-
     group_sub_packages = GroupSubPackage.objects.all()
 
     educational_tours = EducationalTour.objects.all()
@@ -31,6 +31,7 @@ def index(request):
         'pack_types': packageTypes,
         'banner_images': banner_images, 'imp_pack_types': imp_package_types, 'imp_packages': imp_packages, 'imp_pack_names': imp_pack_names,
         'educational_tours': educational_tours,
-        'pilgrimages': pilgrimages, 'adventure_tours': adventure_tours, 'group_sub_packages': group_sub_packages}
+        # 'pilgrimages': pilgrimages, 'adventure_tours': adventure_tours,
+        'group_sub_packages': group_sub_packages}
 
     return render(request, 'tours/index.html', context)

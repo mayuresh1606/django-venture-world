@@ -93,13 +93,13 @@ DATABASES = {
 
         'ENGINE': 'django.db.backends.postgresql',
 
-        'NAME': 'DEMO_TEST',
+        'NAME': 'venture-db',
 
-        'USER': 'postgres',
+        'USER': 'mayureshovhal',
 
         'PASSWORD': config("DB_PASS", default=""),
 
-        'HOST': 'localhost',
+        'HOST': 'database-1.cdwdqhwluokj.ap-south-1.rds.amazonaws.com',
 
         'PORT': '5432',
 
