@@ -746,6 +746,9 @@ footer {
   .imp-pack-top {
     grid-template-columns: 30% 70%;
   }
+  .font-size-small {
+    font-size: small;
+  }
   .box,
   .box-2 {
     width: 32vw;
@@ -800,9 +803,6 @@ footer {
   .table-responsive {
     max-width: 55vw;
     font-size: 0.5rem;
-  }
-  .font-size-small {
-    font-size: small !important;
   }
   .aside-tables {
     width: 39vw;

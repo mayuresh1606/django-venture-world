@@ -752,6 +752,9 @@ footer {
     height: 5rem;
     border-radius: 15px 40px;
   }
+  .font-size-small {
+    font-size: small;
+  }
   .group-table {
     width: 100%;
     height: 15rem;
