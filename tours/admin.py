@@ -1,9 +1,14 @@
+from csv import list_dialects
 from django.contrib import admin
-from .models import IndividualPackage, PackageType, Night, Day, BannerImage, EducationalTour, GroupSubPackage, LeftImage, RightImage, ImportantPackage, CurrentTours
+from .models import IndividualPackage, PackageType, Night, Day, BannerImage, EducationalTour, GroupSubPackage, LeftImage, RightImage, ImportantPackage, CurrentTour, CurrentImpTour
 
 
 class PackageTypeAdmin(admin.ModelAdmin):
     list_display = ['package_type']
+
+
+class CurrentImpTourAdmin(admin.ModelAdmin):
+    list_display = ['imp_tour_name']
 
 
 class IndividualPackageAdmin(admin.ModelAdmin):
@@ -11,7 +16,7 @@ class IndividualPackageAdmin(admin.ModelAdmin):
 
 
 class CurrentToursAdmin(admin.ModelAdmin):
-    list_display = ['name', "comfort_name"]
+    list_display = ['name', "tour_number", "comfort_name"]
 
 
 class DaysAdmin(admin.ModelAdmin):
@@ -43,7 +48,8 @@ class ImportantPackageAdmin(admin.ModelAdmin):
 
 
 admin.site.register(IndividualPackage, IndividualPackageAdmin)
-admin.site.register(CurrentTours, CurrentToursAdmin)
+admin.site.register(CurrentTour, CurrentToursAdmin)
+admin.site.register(CurrentImpTour, CurrentImpTourAdmin)
 admin.site.register(PackageType, PackageTypeAdmin)
 admin.site.register(Day, DaysAdmin)
 admin.site.register(Night, NightsAdmin)

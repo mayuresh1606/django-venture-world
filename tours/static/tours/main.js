@@ -13,7 +13,9 @@
         }
 
         // adding current year in footer
-        currentYearDOM.textContent = new Date().getFullYear();
+        if (currentYearDOM !== null){
+            currentYearDOM.textContent = new Date().getFullYear();
+        }
 
         // setting rows length in tours.html to 3 for now
         const tableBody = document.querySelectorAll('.table-body')
@@ -55,6 +57,11 @@
             }, time);
         }
 
+        if (window.innerWidth <= "500px"){
+            myContainer = document.querySelector(".my-container")
+            myContainer.classList.add("font-size-small")
+            console.log("called");
+        }
         const images = document.querySelectorAll('.link-img')
         const displayImage = document.querySelector('.display-img')
         images.forEach(function(image){

@@ -510,6 +510,9 @@ footer {
     width: 100%;
     height: 15rem;
   }
+  .font-size-small {
+    font-size: small;
+  }
   .edu-container,
   .details-container {
     display: grid;

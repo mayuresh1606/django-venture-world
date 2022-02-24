@@ -510,6 +510,9 @@ footer {
     width: 100%;
     height: 15rem;
   }
+  .font-size-small {
+    font-size: small;
+  }
   .edu-container,
   .details-container {
     display: grid;
@@ -797,6 +800,9 @@ footer {
   .table-responsive {
     max-width: 55vw;
     font-size: 0.5rem;
+  }
+  .font-size-small {
+    font-size: small !important;
   }
   .aside-tables {
     width: 39vw;

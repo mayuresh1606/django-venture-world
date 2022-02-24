@@ -136,8 +136,18 @@ class RightImage(models.Model):
     image = models.ImageField()
 
 
-class CurrentTours(models.Model):
-    name = models.CharField(max_length=255)
+class CurrentImpTour(models.Model):
+    imp_tour_name = models.CharField(max_length=255)
+    destinations = models.CharField(max_length=1024)
+    starting_at = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.imp_tour_name
+
+
+class CurrentTour(models.Model):
+    name = models.ForeignKey(
+        CurrentImpTour, on_delete=models.CASCADE, null=True, blank=True)
 
     tour_number = models.IntegerField()
 
@@ -163,6 +173,12 @@ class CurrentTours(models.Model):
     itinerary_day_12 = models.CharField(max_length=2055, default=False)
     itinerary_day_13 = models.CharField(max_length=2055, default=False)
 
+    note_1 = models.CharField(max_length=2048)
+    note_2 = models.CharField(max_length=2048)
+    note_3 = models.CharField(max_length=2048)
+    note_4 = models.CharField(max_length=2048)
+    note_5 = models.CharField(max_length=2048, default=False)
+
     regular_grp_comfort_rate_1 = models.CharField(max_length=255)
     regular_grp_comfort_rate_2 = models.CharField(max_length=255)
     regular_grp_comfort_rate_3 = models.CharField(max_length=255)
@@ -183,6 +199,8 @@ class CurrentTours(models.Model):
 
     scheduled_rate_1 = models.CharField(max_length=255)
     scheduled_rate_2 = models.CharField(max_length=255)
+
+    short_note = models.CharField(max_length=2048)
 
     accommodation_1 = models.CharField(max_length=1024)
     accommodation_2 = models.CharField(max_length=1024)

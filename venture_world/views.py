@@ -1,6 +1,6 @@
 from django.db import models
 from django.shortcuts import render
-from tours.models import IndividualPackage, Night, Day, PackageType, BannerImage, EducationalTour, GroupSubPackage, ImportantPackage
+from tours.models import IndividualPackage, Night, Day, PackageType, BannerImage, EducationalTour, GroupSubPackage, ImportantPackage, CurrentImpTour
 
 
 def index(request):
@@ -8,8 +8,9 @@ def index(request):
 
     imp_packages = IndividualPackage.objects.filter(important=True)
 
-    pilgrimage = PackageType.objects.filter(package_type='Pilgrimage')
-    adventure_tour = PackageType.objects.filter(package_type='Adventure Tour')
+    current_imp_tours = CurrentImpTour.objects.all()
+    # pilgrimage = PackageType.objects.filter(package_type='Pilgrimage')
+    # adventure_tour = PackageType.objects.filter(package_type='Adventure Tour')
 
     # pilgrimages = pilgrimage.individualpackage_set.all()
     # adventure_tours = adventure_tour.individualpackage_set.all()
@@ -32,6 +33,7 @@ def index(request):
         'banner_images': banner_images, 'imp_pack_types': imp_package_types, 'imp_packages': imp_packages, 'imp_pack_names': imp_pack_names,
         'educational_tours': educational_tours,
         # 'pilgrimages': pilgrimages, 'adventure_tours': adventure_tours,
-        'group_sub_packages': group_sub_packages}
+        'group_sub_packages': group_sub_packages,
+        "current_imp_tours": current_imp_tours}
 
     return render(request, 'tours/index.html', context)

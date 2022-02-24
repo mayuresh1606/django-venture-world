@@ -39,7 +39,7 @@
                 </div>
             </nav>
         </header>
-        <div class="my-container">
+        <div class="my-container font-size-small">
             <center>
                 <h1>Fabulous Himachal</h1>
             </center>
@@ -66,22 +66,23 @@
                 </thead>
                 <tbody class="font-weight-light">
                     {% for tour in tours %}
-                    <tr class="blue-color">
+                    <tr class="blue-color" style="height: min-content;">
                         <td width="13%">
-                            <a class="aside-content new-content" href="#tour-{{tour.tour_number}}"><p>Tour {{tour.tour_number}}</p></a>
+                            <a style="margin: 0;" class="aside-content new-content" href="#tour-{{tour.tour_number}}"><p>Tour {{tour.tour_number}}</p></a>
                         </td>
                         <td>COMFORT</td>
                         <td>
                             {{tour.comfort_name}}
                         </td>
-                        <td>
+                        <td width="15%">
                             <p>{{tour.comfort_duration}}</p>
                         </td>
                         <td>{{tour.comfort_rate}}</td>
                     </tr>
+                    {% if tour.compact_name != "False" %}
                     <tr class="red-color">
                         <td>
-        
+                            
                         </td>
                         <td>COMPACT</td>
                         <td>
@@ -92,6 +93,7 @@
                         </td>
                         <td>{{tour.compact_rate}}</td>
                     </tr>
+                    {% endif %}
                     {% endfor %}
                 </tbody>
             </table>
@@ -112,7 +114,7 @@
                             <td>
                                 {{tour.comfort_name}}
                             </td>
-                            {% if tour.tour_number != 10 %}
+                            {% if tour.tour_number != 10 and tour.name != '2' %}
                                 <td>
                                     {{tour.comfort_duration}} <br>
                                 </td>
@@ -124,6 +126,7 @@
                                 </td>    
                             {% endif %}
                         </tr>
+                        {% if tour.compact_name != "False" %}
                         <tr class="red-color">
                             <td>COMPACT</td>
                             <td>
@@ -134,9 +137,10 @@
                                 {% if tour.tour_number == 10 %}
                                 <span style="text-decoration: underline; text-align: center; padding: 0 auto; color: black;">Operational only from
                                     mid-April to October</span>
-                                {% endif %}
+                                    {% endif %}
                             </td>
                         </tr>
+                        {% endif %}
                     </tbody>
                 </table>
                 <br>
@@ -281,36 +285,17 @@
                             </td>
                         </tr>
                     {% endif %}
-                    <tr>
-                        {% if tour.name == "Himachal" %}
+                    <tr style="font-weight:600">
                         <td colspan="2">
-                            Note: 1) Venture world arranges sightseeing for guest on the Rohtang road where ever permitted and not
-                            on Rohtang pass.
-                            Rohtang pass can be visited from May to October with permits. However, the availability of permit is
-                            limited. Interested
-                            guests
-                            should make their own arrangements to get permits.
-                            2) In Himachal, there may be road blockages due to weather conditions and traffic jam. This can cause
-                            delay in reaching
-                            a place of
-                            visit or even avoiding a spot in extreme conditions.
-                            3) Snow falls in Himachal between late Dec and mid-April. However, Himachal may receive heavy or less
-                            snowfall.
-                            4) In the snow points the locals rent winter jackets, shoes, gloves, and other gears / gadgets used for
-                            snow and extreme
-                            cold
-                            conditions. These are optional articles guests can avail those facilities at their own expense.
+                            Note: {% if tour.note_1 != "False" %}{{tour.note_1}} {% endif %} <br>
+                            {% if tour.note_2 != "False" %}{{ tour.note_2 }}{% endif %} <br>
+                            {% if tour.note_3 != "False" %}{{tour.note_3}} <br>{% endif %}
+                            {% if tour.note_4 != "False" %}{{tour.note_4}} {% endif %}
+                            {% if tour.note_5 != "False" %}
+                                <br>
+                                {{tour.note_5}}
+                            {% endif %}
                         </td>
-                        {% else %}
-                        <td colspan="2">
-                            Note: 1) Some of the sightseeing places may be closed on specific days. <br> 2) There may be road blockages due to traffic
-                            jam, bad
-                            weather, demonstrations etc. which can cause delay in reaching a place of visit. In both the above cases we may opt for
-                            other
-                            sightseeing places or we may even avoid any spot in extreme conditions.
-                        </td>
-
-                        {% endif %}
                     </tr>
                 </table>
                 <br>
@@ -610,14 +595,7 @@
                 <p class="font-weight">Note:</p>
                 <table class="table table-bordered table-striped border-secondary">
                     <tr>
-                        {% if tour.name == "Himachal" %}
-                        <td>The above packages pick up and drop is from Chandigarh. However, if any participant wants to join the
-                            tour from Delhi,
-                            contact
-                            Venture World for the details of Duration and tour cost.</td>
-                        {% else %}
-                            <td>The above packages pick up and drop is from Bengaluru.</td>
-                        {% endif %}
+                        <td>{{tour.short_note}}</td>
                     </tr>
                     <tr>
                         <td>The rates including air fare mentioned above are from ex Mumbai. For Guests travelling from airports

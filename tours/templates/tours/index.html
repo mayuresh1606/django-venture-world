@@ -91,8 +91,10 @@
         <div class="my-tables">
           <div class="imp-packs">
             <section id="tours-tables">
-              <h3 class="imp-heading">FABULOUS HIMACHAL</h3>
+              {% for tour in current_imp_tours %}
+              <h3 class="imp-heading">{{tour.imp_tour_name}}</h3>
               <hr>
+              <!-- {{tour.imp_tour_name}} table -->
               <table class="table table-striped table-light table-responsive">
                 <thead>
                   <tr>
@@ -104,41 +106,16 @@
                 <tbody>
                   <tr>
                     <td>
-                      <span class="font-weight blue-color">FABULOUS HIMACHAL -</span> <br>
-                      SHIMLA / MANALI / DHARAMSHALA / DALHOUSIE /
-                      PALAMPUR / PRAGPUR / CHANDIGARH (U.T) / AMRITSAR (PB)
+                      <span class="font-weight blue-color">{{tour.imp_tour_name}} -</span> <br>
+                      {{tour.destinations}}
                     </td>
-                    <td class="font-weight">₹17,750/- per person</td>
-                    <td><a href="{% url 'current_package_details' 'Himachal' %}">Click for more
-                        details</a></td>
-                  </tr>
-                </tbody>
-              </table>
-              <!-- Karnataka Table -->
-              <h3 class="imp-heading">MAJESTIC KARNATAKA</h3>
-              <hr>
-              <table class="table table-striped table-light table-responsive">
-                <thead>
-                  <tr>
-                    <th scope="col">Destination</th>
-                    <th scope="col">Starting @</th>
-                    <th scope="col">Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>
-                      <span class="font-weight purple-color">MAJESTIC KARNATAKA –</span> <br>
-                      BENGALURU / MYSURU / OOTY (TN) / HASSAN / COORG /
-                      CHIKMAGALUR / CHITRADURGA / HAMPI / BADAMI /
-                      MANGALURU / GOA
-                    </td>
-                    <td class="font-weight">₹16,750/- per person</td>
-                    <td><a href="{% url 'current_package_details' 'Karnataka' %}">Click for more
-                        details</a></td>
-                  </tr>
-                </tbody>
-              </table>
+                    <td class="font-weight">{{tour.starting_at}} per person</td>
+                    <td><a href="{% url 'current_package_details' tour.id %}">Click for more
+                      details</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                {% endfor %}
             </section>
             
           </div>
